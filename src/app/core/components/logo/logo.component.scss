@@ -1,0 +1,44 @@
+.logo-container {
+  overflow: hidden;
+  position: absolute;
+
+  img {
+    width: 100px;
+    height: auto;
+    animation: appearRight 1s ease-in-out forwards;
+  }
+}
+
+@keyframes appearRight {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .logo-container {
+    img {
+      max-width: 150px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo-container {
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .logo-container {
+    img {
+      max-width: 250px;
+    }
+  }
+}

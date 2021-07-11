@@ -1,0 +1,52 @@
+<div class="carousel-container">
+  <button mat-icon-button class="btn-prev" (click)="setPreviousSlide()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div
+    class="carousel"
+    (swiperight)="setPreviousSlide()"
+    (swipeleft)="setNextSlide()"
+  >
+    <div #slidesRef class="slides" *ngIf="interviewees">
+      <ng-container
+        *ngFor="
+          let interviewed of interviewees.slice(
+            interviewees.length - numberOfShownSlides
+          )
+        "
+      >
+        <div #slideRef class="slide">
+          <app-interviewed-card
+            [routerLink]="['/interview', interviewed.id]"
+            [interviewed]="interviewed"
+          ></app-interviewed-card>
+        </div>
+      </ng-container>
+
+      <ng-container *ngFor="let interviewed of interviewees">
+        <div class="slide">
+          <app-interviewed-card
+            [routerLink]="['/interview', interviewed.id]"
+            [interviewed]="interviewed"
+          ></app-interviewed-card>
+        </div>
+      </ng-container>
+
+      <ng-container
+        *ngFor="let interviewed of interviewees.slice(0, numberOfShownSlides)"
+      >
+        <div class="slide">
+          <app-interviewed-card
+            [routerLink]="['/interview', interviewed.id]"
+            [interviewed]="interviewed"
+          ></app-interviewed-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <button mat-icon-button class="btn-next" (click)="setNextSlide()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

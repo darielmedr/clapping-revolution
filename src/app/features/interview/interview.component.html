@@ -1,0 +1,50 @@
+<div class="interview-wrapper">
+  <mat-drawer-container class="sidenav-container">
+    <mat-drawer
+      #drawerRef
+      class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+    >
+      <mat-toolbar>
+        <mat-toolbar-row>
+          LA REVOLUCI&Oacute;N <br />
+          DE LOS APLAUSOS
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button
+            mat-icon-button
+            class="expand-btn"
+            (click)="expansionPanelRef.toggle()"
+          >
+            <mat-icon>{{
+              expansionPanelRef.expanded ? "expand_less" : "expand_more"
+            }}</mat-icon>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+      <mat-expansion-panel #expansionPanelRef hideToggle expanded>
+        <ng-template matExpansionPanelContent>
+          <mat-nav-list>
+            <a
+              mat-list-item
+              *ngFor="let interviewed of interviewees$ | async"
+              [routerLink]="['/interview', interviewed.id]"
+              routerLinkActive="active-interviewed"
+            >
+              {{ interviewed.name | uppercase }}
+            </a>
+          </mat-nav-list>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+      <router-outlet></router-outlet>
+      <app-card-slider></app-card-slider>
+    </div>
+  </mat-drawer-container>
+  <app-footer></app-footer>
+</div>

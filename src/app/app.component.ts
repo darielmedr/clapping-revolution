@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { WindowScrollService } from './shared/services/window-scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'revolucion-de-los-aplausos';
+
+  constructor(private windowScrollService: WindowScrollService) { }
+
+  @HostListener('window:scroll') onScroll(): void {
+    const scrolledTopOffset = this.getTopPosition();
+    this.windowScrollService.update(scrolledTopOffset);
+  }
+
+  private getTopPosition(): number {
+    return window.scrollY;
+  }
 }

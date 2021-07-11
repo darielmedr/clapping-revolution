@@ -1,0 +1,9 @@
+header {
+  position: relative;
+
+  .top-bar {
+    position: absolute;
+    height: var(--top);
+    padding-left: var(--left-margin);
+  }
+}

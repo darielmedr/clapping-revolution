@@ -1,0 +1,32 @@
+:root {
+  // Colors
+  --color-primary: rgb(0, 0, 0);
+  --color-text-400: rgb(87, 87, 87);
+  --color-bg-100: rgb(238, 238, 238);
+  --color-accent: rgb(6, 2, 247);
+
+  // Font Families
+  --font-family-text: "Taviraj", serif;
+  --font-family-title: "Taviraj", serif;
+  --font-family-accent: "Taviraj", serif;
+
+  // Font Sizes
+  --font-size-text: 1rem;
+  --font-size-title: 2rem;
+
+  // Spaces and margin
+  --left-margin: 2.25rem;
+  --top: 4rem;
+
+  @media screen and (min-width: 768px) {
+    // Font Sizes
+    --font-size-text: 1.15rem;
+    --font-size-title: 2.7rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    // Font Sizes
+    --font-size-text: 1.3rem;
+    --font-size-title: 3.1rem;
+  }
+}

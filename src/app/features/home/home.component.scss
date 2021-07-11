@@ -1,0 +1,50 @@
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    z-index: 2;
+    pointer-events: none;
+    margin-top: -3em;
+    text-transform: uppercase;
+  }
+
+  p {
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: calc(var(--font-size-text) * 0.75);
+    z-index: 2;
+  }
+
+  .sroll-down-button {
+    position: absolute;
+    bottom: 20%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .mat-icon {
+    font-size: calc(var(--font-size-title) + 1.5rem);
+    width: calc(var(--font-size-title) + 5px);
+    height: calc(var(--font-size-title) + 5px);
+    border-radius: 50%;
+    border: solid 1px;
+    display: grid;
+    place-content: center;
+    animation: bounceUpDown 3.5s linear infinite;
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(60%);
+  }
+}

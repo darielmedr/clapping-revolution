@@ -1,0 +1,41 @@
+$sidenavPadding: 20px;
+
+.interview-wrapper {
+  position: relative;
+  top: var(--top);
+
+  .sidenav-container {
+    position: relative;
+    min-height: calc(100vh - var(--top));
+  }
+
+  .sidenav {
+    padding: $sidenavPadding;
+    border: none;
+  }
+
+  .mat-expansion-panel {
+    box-shadow: none;
+  }
+
+  .mat-list-item.active-interviewed {
+    color: var(--color-accent);
+  }
+
+  .sidenav-content {
+    max-width: 70rem;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: calc(
+      2 * 2rem + 20px
+    ); // 20px = $sidenavPadding | 2rem = mat-toolbar.row's height
+  }
+}
+
+.expand-btn {
+  border: solid 1px var(--color-text-400);
+
+  .mat-icon {
+    transform: scale(2);
+  }
+}
