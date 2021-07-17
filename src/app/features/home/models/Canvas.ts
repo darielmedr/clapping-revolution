@@ -50,7 +50,7 @@ export default class Canvas {
       window.removeEventListener('mousemove', this.onMouseChange);
     });
   }
- 
+
   private onMouseChange = (evt: MouseEvent) => {
     const mousePosition = new Vector(evt.pageX, evt.pageY);
     this.particleSystem.updateRepeller(mousePosition);
@@ -73,14 +73,13 @@ export default class Canvas {
   }
 
   public getParticlesLenghtFromCanvasSize(): number {
-
     const particlesLengthBase: number = 60;
 
     if (this.width < 400) {
-      return Math.floor(particlesLengthBase * 0.40);
+      return Math.floor(particlesLengthBase * 0.4);
     }
     if (this.width < 600) {
-      return Math.floor(particlesLengthBase * 0.50);
+      return Math.floor(particlesLengthBase * 0.5);
     }
     if (this.width < 768) {
       return Math.floor(particlesLengthBase * 0.6);
