@@ -5,13 +5,13 @@ export default class Particle extends DrawerDOM {
 
     constructor(
         radius: number = 10,
-        imageUrl: string = '',
+        color: string = '',
         position: Vector,
         public velocity: Vector = new Vector(0, 0),
         public acceleration: Vector = new Vector(0, 0),
         public mass: number = 1
     ) {
-        super(radius, imageUrl, position);
+        super(radius, color, position);
     }
 
     public checkEdges(width: number, height: number): void {
@@ -70,7 +70,7 @@ export default class Particle extends DrawerDOM {
         this.acceleration = this.acceleration.add(acceleration);
     }
 
-    public checkCollision(particle: Particle) {
+    public checkCollision(particle: Particle): void {
         const overlapCoefficient = 0.5;
         const minDist = (this.radius + particle.radius) * overlapCoefficient;
         const distanceV = particle.position.subtract(this.position);

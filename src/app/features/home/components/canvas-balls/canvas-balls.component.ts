@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  OnDestroy,
+} from '@angular/core';
 import { fromEvent, Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import Canvas from '../../models/Canvas';
@@ -6,10 +13,9 @@ import Canvas from '../../models/Canvas';
 @Component({
   selector: 'app-canvas-balls',
   templateUrl: './canvas-balls.component.html',
-  styleUrls: ['./canvas-balls.component.scss']
+  styleUrls: ['./canvas-balls.component.scss'],
 })
 export class CanvasBallsComponent implements OnInit, AfterViewInit, OnDestroy {
-
   private unsuscribe$: Subject<void> = new Subject<void>();
   private onResize$: Observable<Event> = new Observable();
 
@@ -18,10 +24,9 @@ export class CanvasBallsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private canvas!: Canvas;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.unsuscribe$.next();

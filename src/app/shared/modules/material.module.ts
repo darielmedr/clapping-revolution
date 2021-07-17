@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutModule } from '@angular/cdk/layout';
 
 const modules: any[] = [
-  LayoutModule,
+  // LayoutModule,
   MatButtonModule,
   MatIconModule,
   MatCardModule,

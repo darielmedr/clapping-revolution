@@ -6,7 +6,7 @@ export default abstract class DrawerDOM {
 
     constructor(
         private _radius: number = 10,
-        public imageUrl: string = '',
+        public color: string = '',
         public position: Vector = new Vector(),
     ) {
         this.htmlElement = document.createElement('div');
@@ -33,15 +33,13 @@ export default abstract class DrawerDOM {
     }
 
     private configHTMLElement(): void {
-        this.htmlElement.style.backgroundImage = `url(${this.imageUrl})`;
-        this.htmlElement.style.backgroundRepeat = 'no-repeat';
-        this.htmlElement.style.backgroundSize = 'cover';
-        this.htmlElement.style.backgroundPosition = 'center';
-        this.htmlElement.style.position = 'absolute';
-        this.htmlElement.style.margin = 0 + 'px';
-        this.htmlElement.style.padding = 0 + 'px';
-        this.htmlElement.style.opacity = '0.8';
         this.setHTMLSize();
+        this.htmlElement.style.backgroundColor = `${this.color}`;
+        this.addStyleClass('ball');
+    }
+
+    public addStyleClass(className: string): void {
+        this.htmlElement.classList.add(className);
     }
 
     public draw(): void {
