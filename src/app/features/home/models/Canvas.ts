@@ -2,7 +2,7 @@ import ParticleSystem from './ParticleSystem';
 import Vector from './Vector';
 
 export default class Canvas {
-  private particlesLength = 55;
+  private particlesLength = 60;
   private width: number = 300;
   private height: number = 300;
 
@@ -12,6 +12,7 @@ export default class Canvas {
   ) {
     this.width = this.canvas.clientWidth;
     this.height = this.canvas.clientHeight;
+    this.particlesLength = this.getParticlesLenghtFromCanvasSize();
   }
 
   public updateSize(width: number, height: number): void {
@@ -49,7 +50,7 @@ export default class Canvas {
       window.removeEventListener('mousemove', this.onMouseChange);
     });
   }
-
+ 
   private onMouseChange = (evt: MouseEvent) => {
     const mousePosition = new Vector(evt.pageX, evt.pageY);
     this.particleSystem.updateRepeller(mousePosition);
@@ -57,31 +58,36 @@ export default class Canvas {
 
   public adjustParticleSystemToCanvasSize(): void {
     if (this.width < 600) {
-      this.particleSystem.setParticlesRadius(17);
-      // this.particleSystem.init(
-      //   Math.floor(this.particlesLength * 0.8),
-      //   this.canvas
-      // );
-      console.log(this.width);
+      this.particleSystem.setParticlesRadius(15);
       return;
     }
     if (this.width < 768) {
-      this.particleSystem.setParticlesRadius(20);
-      // this.particleSystem.init(
-      //   Math.floor(this.particlesLength * 0.85),
-      //   this.canvas
-      // );
+      this.particleSystem.setParticlesRadius(17);
       return;
     }
     if (this.width < 1024) {
-      this.particleSystem.setParticlesRadius(23);
-      // this.particleSystem.init(
-      //   Math.floor(this.particlesLength * 0.9),
-      //   this.canvas
-      // );
+      this.particleSystem.setParticlesRadius(20);
       return;
     }
-    // this.particleSystem.init(this.particlesLength, this.canvas);
-    this.particleSystem.setParticlesRadius(26);
+    this.particleSystem.setParticlesRadius(24);
+  }
+
+  public getParticlesLenghtFromCanvasSize(): number {
+
+    const particlesLengthBase: number = 60;
+
+    if (this.width < 400) {
+      return Math.floor(particlesLengthBase * 0.40);
+    }
+    if (this.width < 600) {
+      return Math.floor(particlesLengthBase * 0.50);
+    }
+    if (this.width < 768) {
+      return Math.floor(particlesLengthBase * 0.6);
+    }
+    if (this.width < 1024) {
+      return Math.floor(particlesLengthBase * 0.8);
+    }
+    return Math.floor(particlesLengthBase);
   }
 }

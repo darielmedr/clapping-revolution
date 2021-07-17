@@ -2,7 +2,6 @@ import Particle from './Particle';
 import Repeller from './Repeller';
 import Vector from './Vector';
 import { ParticleService } from '../services/particle.service';
-import { Component, Inject } from '@angular/core';
 
 export default class ParticleSystem {
   private power: number = 10;
