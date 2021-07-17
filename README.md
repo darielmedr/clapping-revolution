@@ -1,6 +1,11 @@
-# RevolucionDeLosAplausos
+# Revolucion de los Aplausos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+This project is an article from [Periodismo de Barrio]('https://www.periodismodebarrio.org/').
+
+## TODO
+
+- Adjust balls (particles) length on screen resize
+- Compute balls (particles) with a web worker to improve performance
 
 ## Development server
 
