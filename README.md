@@ -1,6 +1,31 @@
 # Revolucion de los Aplausos
 
-This project is an article from [Periodismo de Barrio]('https://www.periodismodebarrio.org/').
+This project is an article for [Periodismo de Barrio]('https://www.periodismodebarrio.org/').
+
+
+## Table of contents
+
+- [Built with](#built-with)
+- [Links](#links)
+- [TODO](#todo)
+- [Author](#author)
+
+
+## Built with
+
+- Semantic HTML5 markup
+- SCSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.io/) - Angular framework
+- [Angular Material Design](https://material.angular.io/) - Material Design components for Angular
+
+## Links
+
+<!-- - Solution URL: [https://github.com/darielmedr/REST-Countries-API-color-theme-angular](https://github.com/darielmedr/REST-Countries-API-color-theme-angular)
+- Live Site URL: [https://darielmedr.github.io/REST-Countries-API-color-theme-angular](https://darielmedr.github.io/REST-Countries-API-color-theme-angular) -->
+
 
 ## TODO
 
@@ -19,14 +44,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Author
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- GitHub - [@darielmedr](https://github.com/darielmedr)
+- LinkedIn - [Dariel Medina Rodríguez](https://www.linkedin.com/in/darielmedr)
