@@ -1,6 +1,6 @@
 import { Directive, HostBinding, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { WindowScrollService } from 'src/app/shared/services/window-scroll.service';
+import { WindowService } from '../services/window.service';
 
 @Directive({
   selector: '[appScrollProgressBar]'
@@ -9,7 +9,7 @@ export class ScrollProgressBarDirective implements OnInit, OnDestroy {
 
   private subscription: Subscription = new Subscription();
 
-  constructor(private windowScrollService: WindowScrollService) { }
+  constructor(private windowService: WindowService) { }
 
   ngOnInit(): void {
     this.setScrolledPercent();
@@ -22,7 +22,7 @@ export class ScrollProgressBarDirective implements OnInit, OnDestroy {
   @HostBinding('style.width') scrolled: string = '0%';
 
   private setScrolledPercent() {
-    this.subscription = this.windowScrollService.getScrolledTop().subscribe(
+    this.subscription = this.windowService.getScrolledTop().subscribe(
       () => {
         const documentHeight = Math.max(
           document.body.scrollHeight || 0.01,

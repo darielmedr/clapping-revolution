@@ -16,6 +16,12 @@ export class InterviewedCardComponent implements OnInit {
     quotes: ''
   };
 
+  @Input()
+  public hideQuote: boolean = true;
+
+  @Input()
+  public showShadow: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

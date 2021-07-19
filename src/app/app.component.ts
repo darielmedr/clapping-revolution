@@ -1,18 +1,78 @@
-import { Component, HostListener } from '@angular/core';
-import { WindowScrollService } from './shared/services/window-scroll.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { WindowService } from './core/services/window.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
-  constructor(private windowScrollService: WindowScrollService) { }
+  constructor(
+    private windowService: WindowService,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+    ) {
+      this.matIconRegistry.addSvgIcon(
+        "arrowDown",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/arrow-down.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "facebook",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/facebook.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "instagram",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/instagram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "telegram",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/telegram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "twitter",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "youtube",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/youtube.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "heart",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/heart.svg")
+      );
+    }
 
-  @HostListener('window:scroll') onScroll(): void {
-    const scrolledTopOffset = this.getTopPosition();
-    this.windowScrollService.update(scrolledTopOffset);
+  ngOnInit(): void {
+    this.detectWindowResize();
+    this.detectWindowScroll();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  private detectWindowResize(): void {
+    fromEvent(window, 'resize')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        this.windowService.updateScreenWidth(document.body.clientWidth);
+      });
+  }
+
+  private detectWindowScroll(): void {
+    fromEvent(window, 'scroll')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        const scrolledTopOffset = this.getTopPosition();
+        this.windowService.updateScrollTop(scrolledTopOffset);
+      });
   }
 
   private getTopPosition(): number {

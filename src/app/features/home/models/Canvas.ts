@@ -66,10 +66,14 @@ export default class Canvas {
       return;
     }
     if (this.width < 1024) {
-      this.particleSystem.setParticlesRadius(20);
+      this.particleSystem.setParticlesRadius(19);
       return;
     }
-    this.particleSystem.setParticlesRadius(24);
+    if (this.width < 1440) {
+      this.particleSystem.setParticlesRadius(21);
+      return;
+    }
+    this.particleSystem.setParticlesRadius(27);
   }
 
   public getParticlesLenghtFromCanvasSize(): number {

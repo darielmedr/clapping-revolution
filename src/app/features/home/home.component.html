@@ -1,19 +1,47 @@
-<section class="home">
-    <app-canvas-balls></app-canvas-balls>
-    <h1> LA REVOLUCI&Oacute;N <br /> DE LOS APLAUSOS</h1>
-    <p>
-        Serie de entrevistas <br />
-        de la sociedad civil cubana <br />
-        a ra&iacute;z de los sucesos <br />
-        del 27n
-    </p>
-    <button mat-icon-button class="sroll-down-button" (click)="scrollTo(interviewedRef)">
-        <mat-icon>expand_more</mat-icon>
-    </button>
+<section class="home" #homeRef>
+  <app-canvas-balls></app-canvas-balls>
+  <h1>
+    LA REVOLUCI&Oacute;N <br />
+    DE LOS APLAUSOS
+  </h1>
+  <p>
+    Serie de entrevistas <br />
+    de la sociedad civil cubana <br />
+    a ra&iacute;z de los sucesos <br />
+    del 27n
+  </p>
+  <button
+    mat-icon-button
+    class="sroll-down-button"
+    (click)="scrollTo(interviewedRef)"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Scroll down"
+      svgIcon="arrowDown"
+    ></mat-icon>
+  </button>
 </section>
 
 <section #interviewedRef>
-    <app-interviewed-grid></app-interviewed-grid>
+  <app-interviewed-grid></app-interviewed-grid>
 </section>
+
+<section>
+  <app-external-views></app-external-views>
+</section>
+
+<div class="scroll-up">
+  <button
+    mat-icon-button
+    (click)="scrollTo(homeRef)"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Scroll up"
+      svgIcon="arrowDown"
+    ></mat-icon>
+  </button>
+</div>
 
 <app-footer></app-footer>

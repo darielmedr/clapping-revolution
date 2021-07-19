@@ -1,4 +1,18 @@
 <footer>
-  <app-logo></app-logo>
-  <p>footer</p>
+  <app-logo class="logo"></app-logo>
+
+  <div class="site-info">
+    <p>Sitio web @periodismodebarrio</p>
+    <p>licencia 2021</p>
+  </div>
+
+  <div class="share">
+    <a href="" mat-icon-button *ngFor="let link of links">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Share with Facebook"
+        [svgIcon]="link.icon"
+      ></mat-icon>
+    </a>
+  </div>
 </footer>

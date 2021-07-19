@@ -1,8 +1,8 @@
-<mat-card>
+<mat-card [ngClass]="{ 'shadow': showShadow }" appShowInView className="highlight">
   <img mat-card-image [src]="interviewed?.picture" [alt]="interviewed?.name" />
   <mat-card-title>{{interviewed?.name}}</mat-card-title>
   <mat-card-content>
-    <p>
+    <p *ngIf="!hideQuote">
       {{interviewed?.quotes}}
     </p>
   </mat-card-content>

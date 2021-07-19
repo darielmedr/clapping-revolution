@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WindowScrollService } from './window-scroll.service';
+import { WindowService } from './window.service';
 
-describe('WindowScrollService', () => {
-  let service: WindowScrollService;
+describe('WindowService', () => {
+  let service: WindowService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WindowScrollService);
+    service = TestBed.inject(WindowService);
   });
 
   it('should be created', () => {
