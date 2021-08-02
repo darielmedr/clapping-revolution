@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InterviewedService } from '../../core/services/interviewed.service';
 import { Observable } from 'rxjs';
-import Interviewed from '../../shared/models/interviewed';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import Interviewed from 'src/app/shared/models/interviewed';
 
 @Component({
   selector: 'app-interview',
@@ -15,6 +15,8 @@ export class InterviewComponent implements OnInit {
 
   public interviewees$: Observable<Array<Interviewed>> = new Observable();
   public isHandset$: Observable<boolean> = new Observable();
+
+  public isMenuOpened: boolean = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -31,4 +33,11 @@ export class InterviewComponent implements OnInit {
     this.interviewees$ = this.interviewedService.getInterviewees();
   }
 
+  public openMenu(): void {
+    this.isMenuOpened = true;
+  }
+
+  public closeMenu(): void {
+    this.isMenuOpened = false;
+  }
 }

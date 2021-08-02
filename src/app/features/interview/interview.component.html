@@ -1,8 +1,19 @@
-<div class="interview-wrapper">
-  <mat-drawer-container class="sidenav-container">
+<app-menu
+  *ngIf="isMenuOpened"
+  (closeMenu)="closeMenu()"
+  [interviewees]="interviewees$ | async"
+></app-menu>
+
+<div class="wrapper">
+  <app-navbar
+    (openMenu)="openMenu()"
+    [showOpenBtn]="isHandset$ | async"
+  ></app-navbar>
+
+  <mat-drawer-container class="interview">
     <mat-drawer
       #drawerRef
-      class="sidenav"
+      class="interview-sidenav"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false"
@@ -13,14 +24,14 @@
           DE LOS APLAUSOS
         </mat-toolbar-row>
         <mat-toolbar-row>
-          <button
-            mat-icon-button
-            class="expand-btn"
-            (click)="expansionPanelRef.toggle()"
-          >
-            <mat-icon>{{
-              expansionPanelRef.expanded ? "expand_less" : "expand_more"
-            }}</mat-icon>
+          <button mat-icon-button (click)="expansionPanelRef.toggle()">
+            <mat-icon
+              class="expand-icon"
+              [ngClass]="{ 'arrow-up': expansionPanelRef.expanded }"
+              aria-hidden="false"
+              aria-label="Scroll up"
+              svgIcon="arrowDown"
+            ></mat-icon>
           </button>
         </mat-toolbar-row>
       </mat-toolbar>
@@ -41,10 +52,11 @@
       </mat-expansion-panel>
     </mat-drawer>
 
-    <div class="sidenav-content">
+    <div class="interview-content">
       <router-outlet></router-outlet>
       <app-card-slider></app-card-slider>
     </div>
   </mat-drawer-container>
+
   <app-footer></app-footer>
 </div>

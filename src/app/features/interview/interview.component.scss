@@ -1,41 +1,46 @@
-$sidenavPadding: 20px;
+$sidenavPadding: 2rem;
 
-.interview-wrapper {
+.wrapper {
   position: relative;
-  top: var(--top);
 
-  .sidenav-container {
-    position: relative;
+  .interview {
     min-height: calc(100vh - var(--top));
-  }
 
-  .sidenav {
-    padding: $sidenavPadding;
-    border: none;
-  }
+    &-sidenav {
+      padding: $sidenavPadding;
+      border: none;
 
-  .mat-expansion-panel {
-    box-shadow: none;
-  }
+      .expand-icon {
+        transition: transform 0.5s ease-in-out;
+        width: 4rem;
+        height: 4rem;
+      }
 
-  .mat-list-item.active-interviewed {
-    color: var(--color-accent);
-  }
+      .arrow-up {
+        transform: rotate(-180deg);
+      }
 
-  .sidenav-content {
-    max-width: 70rem;
-    width: 70%;
-    margin: 0 auto;
-    padding-top: calc(
-      2 * 2rem + 20px
-    ); // 20px = $sidenavPadding | 2rem = mat-toolbar.row's height
-  }
-}
+      .mat-expansion-panel {
+        box-shadow: none;
+        letter-spacing: 0;
 
-.expand-btn {
-  border: solid 1px var(--color-text-400);
+        .mat-list-item {
+          font-size: var(--font-size-text);
 
-  .mat-icon {
-    transform: scale(2);
+          &.active-interviewed {
+            color: var(--color-accent);
+          }
+        }
+      }
+    }
+
+    &-content {
+      max-width: 70rem;
+      width: 70%;
+      margin: 0 auto;
+      padding-top: calc(
+        2 * 2rem + #{$sidenavPadding}
+      ); // 2rem = mat-toolbar.row's height
+    }
   }
 }

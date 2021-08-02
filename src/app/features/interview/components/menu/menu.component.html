@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <mat-toolbar>
+    <mat-toolbar-row class="close-btn">
+      <button mat-icon-button (click)="closeMenu()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Scroll up"
+          svgIcon="arrowDown"
+        ></mat-icon>
+      </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="title">
+      LA REVOLUCI&Oacute;N <br />
+      DE LOS APLAUSOS
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <ul class="links">
+    <li
+      *ngFor="let interviewed of interviewees"
+      [routerLink]="['/interview', interviewed.id]"
+      routerLinkActive="active-interviewed"
+      (click)="closeMenu()"
+    >
+      <a>{{ interviewed.name | uppercase }}</a>
+    </li>
+  </ul>
+</div>
