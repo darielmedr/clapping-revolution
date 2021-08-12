@@ -16,13 +16,21 @@
   --font-size-text: 1.1rem;
   --font-size-title: 2.4rem;
 
+  --icon-size-action: 3.5rem;
+
   // Spaces and margin
   --border-margin: 5.1rem;
+
+  @media screen and (min-width: 768px) {
+    --icon-size-action: 5rem;
+  }
 
   @media screen and (min-width: 768px) {
     // Font Sizes
     --font-size-text: 1.25rem;
     --font-size-title: 2.8rem;
+
+    --icon-size-action: 5rem;
 
     // Spaces and margin
     --border-margin: 6rem;
@@ -41,6 +49,8 @@
     // Font Sizes
     --font-size-text: 1.8rem;
     --font-size-title: 5rem;
+
+    --icon-size-action: 6.5rem;
 
     // Spaces and margin
     --border-margin: 8rem;
