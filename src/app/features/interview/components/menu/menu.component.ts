@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Interviewed from 'src/app/shared/models/interviewed';
+import { IntervieweeService } from 'src/app/core/services/interviewee.service';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-menu',
@@ -9,17 +10,22 @@ import Interviewed from 'src/app/shared/models/interviewed';
 export class MenuComponent implements OnInit {
 
   @Input()
-  public interviewees: Interviewed[] | null = [];
+  public interviewees: Interviewee[] | null = [];
 
   @Output('closeMenu')
   private closeEvent: EventEmitter<void> = new EventEmitter();
 
-  constructor() { }
+  constructor(private intervieweeService: IntervieweeService) { }
 
   ngOnInit(): void {
   }
 
   public closeMenu(): void {
     this.closeEvent.emit();
+  }
+
+  public setIntervieweeByIdAndCloseMenu(id: number): void {
+    this.intervieweeService.setIntervieweeById(id);
+    this.closeMenu();
   }
 }

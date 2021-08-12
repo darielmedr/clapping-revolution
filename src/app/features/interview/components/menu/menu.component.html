@@ -20,7 +20,7 @@
       *ngFor="let interviewed of interviewees"
       [routerLink]="['/interview', interviewed.id]"
       routerLinkActive="active-interviewed"
-      (click)="closeMenu()"
+      (click)="setIntervieweeByIdAndCloseMenu(interviewed.id)"
     >
       <a>{{ interviewed.name | uppercase }}</a>
     </li>

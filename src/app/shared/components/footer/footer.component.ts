@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -15,6 +15,9 @@ export class FooterComponent implements OnInit {
     { icon: 'youtube' },
     { icon: 'heart' },
   ];
+
+  @Input()
+  public isDetailView: boolean = false;
 
   constructor() {}
 

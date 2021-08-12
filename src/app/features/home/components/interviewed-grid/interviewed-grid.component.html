@@ -3,6 +3,7 @@
     <app-interviewed-card
       [routerLink]="['/interview', interviewed.id]"
       [interviewed]="interviewed"
+      (click)="setIntervieweeById(interviewed.id)"
     ></app-interviewed-card>
   </div>
 </div>

@@ -10,6 +10,8 @@ import { CardSliderComponent } from './components/card-slider/card-slider.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { MenuComponent } from './components/menu/menu.component';
+import { Interviewee1Component } from './components/interviewees/interviewee1/interviewee1.component';
+import { Interviewee2Component } from './components/interviewees/interviewee2/interviewee2.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MenuComponent } from './components/menu/menu.component';
     CardSliderComponent,
     NavbarComponent,
     MenuComponent,
+    Interviewee1Component,
+    Interviewee2Component,
   ],
   imports: [
     CommonModule,

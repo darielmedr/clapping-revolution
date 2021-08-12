@@ -1,5 +1,5 @@
-export default interface Interviewed {
-    id?: number,
+export default interface Interviewee {
+    id: number,
     name: string,
     picture: string,
     quotes: string

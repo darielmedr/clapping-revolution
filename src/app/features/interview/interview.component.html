@@ -44,6 +44,7 @@
               *ngFor="let interviewed of interviewees$ | async"
               [routerLink]="['/interview', interviewed.id]"
               routerLinkActive="active-interviewed"
+              (click)="setIntervieweeById(interviewed.id)"
             >
               {{ interviewed.name | uppercase }}
             </a>
@@ -53,10 +54,11 @@
     </mat-drawer>
 
     <div class="interview-content">
+      <app-interviewed-detail></app-interviewed-detail>
       <router-outlet></router-outlet>
       <app-card-slider></app-card-slider>
     </div>
   </mat-drawer-container>
 
-  <app-footer></app-footer>
+  <app-footer [isDetailView]="true"></app-footer>
 </div>

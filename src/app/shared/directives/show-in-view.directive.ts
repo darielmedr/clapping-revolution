@@ -21,6 +21,9 @@ export class ShowInViewDirective implements OnInit, AfterViewInit, OnDestroy {
   private isShownInView: boolean = false;
 
   @Input()
+  public showShadow: boolean = false;
+
+  @Input()
   public className: string = '';
 
   @HostBinding('class')
@@ -38,6 +41,8 @@ export class ShowInViewDirective implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    if (!this.showShadow) return;
+
     this.startObserving();
   }
 
@@ -51,8 +56,8 @@ export class ShowInViewDirective implements OnInit, AfterViewInit, OnDestroy {
   private createObserver(): void {
     const options: IntersectionObserverInit = {
       rootMargin: '-50% 0%',
-      threshold: 0
-    }
+      threshold: 0,
+    };
 
     this.observer = new IntersectionObserver(this.handleOnView, options);
   }
@@ -60,15 +65,13 @@ export class ShowInViewDirective implements OnInit, AfterViewInit, OnDestroy {
   private startObserving(): void {
     this.windowService
       .getScreenWidth()
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((width: number) => {
         if (width < 500) {
           this.observer.observe(this.targetElement.nativeElement);
         } else {
           this.observer.unobserve(this.targetElement.nativeElement);
-          this.isShownInView = false
+          this.isShownInView = false;
         }
       });
   }

@@ -1,0 +1,29 @@
+.interview-text {
+  text-align: justify;
+  line-height: 1.5;
+
+  p:first-child {
+    display: flex;
+    flex-direction: column;
+
+    .first-letter {
+      font-size: 10em;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width: 415px) {
+  .interview-text {
+    p:first-child {
+      display: block;
+
+      .first-letter {
+        float: left;
+        line-height: 0.8;
+        padding-right: 1.5rem;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -23,12 +23,12 @@ $border-space: 2.5rem;
     font-weight: var(--font-weight-medium);
 
     p {
-      font-size: calc(var(--font-size-text) + 0.05rem);
+      font-size: calc(var(--font-size-text) * 0.75);
     }
   }
 
   .mat-card-title {
-    font-size: calc(var(--font-size-text) + 0.1rem);
+    font-size: calc(var(--font-size-text) * 0.85);
   }
 }
 
@@ -41,4 +41,12 @@ $border-space: 2.5rem;
   box-shadow: -1px 6px 8px -3px rgba(0, 0, 0, 0.4),
               -2px 10px 12px 2px rgba(0, 0, 0, 0.3),
               -1px 4px 8px 1px rgba(0, 0, 0, 0.15);
+}
+
+.is-title-detail {
+  font-size: calc(var(--font-size-text) * 1.2) !important;
+}
+
+.is-subtitle-detail {
+  font-size: calc(var(--font-size-text) * 0.95) !important;
 }

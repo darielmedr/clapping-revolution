@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { InterviewedService } from 'src/app/core/services/interviewed.service';
-import Interviewed from 'src/app/shared/models/interviewed';
+import { IntervieweeService } from 'src/app/core/services/interviewee.service';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-card-slider',
@@ -11,7 +11,7 @@ import Interviewed from 'src/app/shared/models/interviewed';
 })
 export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  public interviewees: Array<Interviewed> = [];
+  public interviewees: Array<Interviewee> = [];
 
   @ViewChild('slidesRef') slidesRef!: ElementRef;
   @ViewChild('slideRef') slideRef!: ElementRef;
@@ -21,22 +21,30 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private unsuscribe$: Subject<void> = new Subject();
 
-  constructor(private interviewedService: InterviewedService) { }
+  constructor(private intervieweeService: IntervieweeService) { }
 
   ngOnInit(): void {
-    this.interviewedService.getInterviewees().pipe(takeUntil(this.unsuscribe$)).subscribe(
-      (interviewees: Interviewed[]) => this.interviewees = interviewees
+    this.intervieweeService.getInterviewees().pipe(takeUntil(this.unsuscribe$)).subscribe(
+      (interviewees: Interviewee[]) => this.interviewees = interviewees
     );
   }
 
   ngOnDestroy(): void {
+    window.removeEventListener('resize', this.handleWindowResize);
+    this.slidesRef.nativeElement.removeEventListener('transitionend', this.handleTransitionEnd);
+
     this.unsuscribe$.next();
+    this.unsuscribe$.complete();
   }
 
   ngAfterViewInit(): void {
     window.addEventListener('resize', this.handleWindowResize);
     this.slidesRef.nativeElement.addEventListener('transitionend', this.handleTransitionEnd);
     this.setCurrentSlidePosition();
+  }
+
+  public setIntervieweeById(id: number): void {
+    this.intervieweeService.setIntervieweeById(id);
   }
 
   public setSlideAtIndex(slideIndex: number): void {
@@ -102,7 +110,7 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
   private handleWindowResize = () => {
     if (window.innerWidth < 520) {
       this.numberOfShownSlides = 1;
-    } else if (window.innerWidth < 700) {
+    } else if (window.innerWidth < 770) {
       this.numberOfShownSlides = 2;
     } else {
       this.numberOfShownSlides = 3;

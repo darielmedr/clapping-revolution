@@ -1,6 +1,11 @@
 <div class="carousel-container">
-  <button mat-icon-button class="btn-prev" (click)="setPreviousSlide()">
-    <mat-icon>chevron_left</mat-icon>
+  <button mat-icon-button (click)="setPreviousSlide()">
+    <mat-icon
+      class="btn-arrow prev"
+      aria-hidden="false"
+      aria-label="Scroll down"
+      svgIcon="arrowDown"
+    ></mat-icon>
   </button>
 
   <div
@@ -20,6 +25,8 @@
           <app-interviewed-card
             [routerLink]="['/interview', interviewed.id]"
             [interviewed]="interviewed"
+            [showShadow]="false"
+            (click)="setIntervieweeById(interviewed.id)"
           ></app-interviewed-card>
         </div>
       </ng-container>
@@ -29,6 +36,8 @@
           <app-interviewed-card
             [routerLink]="['/interview', interviewed.id]"
             [interviewed]="interviewed"
+            [showShadow]="false"
+            (click)="setIntervieweeById(interviewed.id)"
           ></app-interviewed-card>
         </div>
       </ng-container>
@@ -40,13 +49,20 @@
           <app-interviewed-card
             [routerLink]="['/interview', interviewed.id]"
             [interviewed]="interviewed"
+            [showShadow]="false"
+            (click)="setIntervieweeById(interviewed.id)"
           ></app-interviewed-card>
         </div>
       </ng-container>
     </div>
   </div>
 
-  <button mat-icon-button class="btn-next" (click)="setNextSlide()">
-    <mat-icon>chevron_right</mat-icon>
+  <button mat-icon-button (click)="setNextSlide()">
+    <mat-icon
+      class="btn-arrow next"
+      aria-hidden="false"
+      aria-label="Scroll down"
+      svgIcon="arrowDown"
+    ></mat-icon>
   </button>
 </div>
