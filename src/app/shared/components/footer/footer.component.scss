@@ -1,6 +1,7 @@
 footer {
   position: relative;
   padding: var(--border-margin);
+  margin-top: 3rem;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -46,6 +47,7 @@ footer {
 
 @media screen and (min-width: 535px) {
   footer {
+    margin-top: 6rem;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
