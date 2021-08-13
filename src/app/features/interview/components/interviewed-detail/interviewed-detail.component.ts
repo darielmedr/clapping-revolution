@@ -9,6 +9,7 @@ import Interviewee from 'src/app/shared/models/interviewee.model';
   styleUrls: ['./interviewed-detail.component.scss'],
 })
 export class InterviewedDetailComponent implements OnInit, OnDestroy {
+
   public interviewed$: Observable<Interviewee> = new Observable();
 
   private unsubscribe$: Subject<void> = new Subject();

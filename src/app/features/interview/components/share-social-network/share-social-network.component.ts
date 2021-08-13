@@ -1,8 +1,8 @@
+import { IntervieweeService } from 'src/app/core/services/interviewee.service';
 import { OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Event, NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-share-social-network',
@@ -25,7 +25,7 @@ export class ShareSocialNetworkComponent implements OnInit, OnDestroy {
 
   public encodedUrl: string;
 
-  constructor(private router: Router) {
+  constructor(private intervreeService: IntervieweeService) {
     this.encodedUrl = this.getCurrentUrl();
   }
 
@@ -39,14 +39,12 @@ export class ShareSocialNetworkComponent implements OnInit, OnDestroy {
   }
 
   private setUrlOnRouteChange(): void {
-    this.router.events
-      .pipe(
-        takeUntil(this.unsubscribe$),
-        filter(
-          (event): event is NavigationEnd => event instanceof NavigationEnd
-        )
-      )
-      .subscribe((event: NavigationEnd) => {
+
+    // getCurrentInterviewee() method of interviewee service emits a value when route change
+    this.intervreeService
+      .getCurrentInterviewee()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
         this.encodedUrl = this.getCurrentUrl();
       });
   }

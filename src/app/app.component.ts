@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
 import { fromEvent, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
+import { IntervieweeService } from './core/services/interviewee.service';
 import { WindowService } from './core/services/window.service';
 
 @Component({
@@ -11,12 +13,15 @@ import { WindowService } from './core/services/window.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
     private windowService: WindowService,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private intervieweeService: IntervieweeService,
+    private router: Router
     ) {
       this.matIconRegistry.addSvgIcon(
         "arrowDown",
@@ -95,6 +100,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.detectWindowResize();
     this.detectWindowScroll();
+    this.listenOnRouteChange();
   }
 
   ngOnDestroy(): void {
@@ -121,5 +127,40 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private getTopPosition(): number {
     return window.scrollY;
+  }
+
+  private listenOnRouteChange(): void {
+    this.router.events
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event: NavigationEnd) => {
+        const id: number | undefined = this.extractIdOfRoute(event.urlAfterRedirects);
+
+        if (id) {
+          this.setIntervieweeById(id);
+        }
+      });
+  }
+  private extractIdOfRoute(routePath: string): number | undefined {
+
+    const pathSegments: string[] = routePath.split('/');
+
+    const interviewPath: string = pathSegments[pathSegments.length - 2];
+
+    if (interviewPath !== 'interview') {
+      return undefined;
+    }
+
+    const idString: string = pathSegments[pathSegments.length - 1];
+    const id: number = Number(idString);
+
+    return id === NaN ? undefined : id;
+  }
+  public setIntervieweeById(id: number): void {
+    this.intervieweeService.setIntervieweeById(id);
   }
 }

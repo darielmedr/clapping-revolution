@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IntervieweeService } from 'src/app/core/services/interviewee.service';
 import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
@@ -15,17 +14,12 @@ export class MenuComponent implements OnInit {
   @Output('closeMenu')
   private closeEvent: EventEmitter<void> = new EventEmitter();
 
-  constructor(private intervieweeService: IntervieweeService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   public closeMenu(): void {
     this.closeEvent.emit();
-  }
-
-  public setIntervieweeByIdAndCloseMenu(id: number): void {
-    this.intervieweeService.setIntervieweeById(id);
-    this.closeMenu();
   }
 }

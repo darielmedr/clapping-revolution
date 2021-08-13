@@ -17,8 +17,4 @@ export class InterviewedGridComponent implements OnInit {
   ngOnInit(): void {
     this.interviewees$ = this.intervieweeService.getInterviewees();
   }
-
-  public setIntervieweeById(id: number): void {
-    this.intervieweeService.setIntervieweeById(id);
-  }
 }

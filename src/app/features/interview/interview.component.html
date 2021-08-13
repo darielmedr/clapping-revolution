@@ -44,7 +44,6 @@
               *ngFor="let interviewed of interviewees$ | async"
               [routerLink]="['/interview', interviewed.id]"
               routerLinkActive="active-interviewed"
-              (click)="setIntervieweeById(interviewed.id)"
             >
               {{ interviewed.name | uppercase }}
             </a>
