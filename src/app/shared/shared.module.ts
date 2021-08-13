@@ -6,17 +6,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CoreModule } from '../core/core.module';
 import { ShowInViewDirective } from './directives/show-in-view.directive';
 import { YtPlayerComponent } from './components/yt-player/yt-player.component';
+import { InterviewTemplateComponent } from './components/interview-template/interview-template.component';
 
 const commonElementes: any[] = [
   YtPlayerComponent,
   InterviewedCardComponent,
   FooterComponent,
   ShowInViewDirective,
+  InterviewTemplateComponent,
 ];
 
 @NgModule({
   declarations: [
-    ...commonElementes
+    ...commonElementes,
   ],
   imports: [
     CommonModule,

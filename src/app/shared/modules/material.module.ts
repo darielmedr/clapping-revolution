@@ -19,7 +19,7 @@ const modules: any[] = [
   MatExpansionModule,
   MatListModule,
   MatToolbarModule,
-  MatTabsModule
+  MatTabsModule,
 ];
 
 @NgModule({

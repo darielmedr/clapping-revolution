@@ -11,7 +11,7 @@ import Interviewee from 'src/app/shared/models/interviewee.model';
 export class InterviewedDetailComponent implements OnInit, OnDestroy {
   public interviewed$: Observable<Interviewee> = new Observable();
 
-  private unsuscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject();
 
   constructor(private intervieweeService: IntervieweeService) {}
 
@@ -20,8 +20,8 @@ export class InterviewedDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.unsuscribe$.next();
-    this.unsuscribe$.complete();
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   private setCurrentInterviewedById(): void {
