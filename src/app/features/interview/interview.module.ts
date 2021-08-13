@@ -28,6 +28,7 @@ import { Interviewee15Component } from './components/interviewees/interviewee15/
 import { Interviewee16Component } from './components/interviewees/interviewee16/interviewee16.component';
 import { Interviewee17Component } from './components/interviewees/interviewee17/interviewee17.component';
 import { Interviewee18Component } from './components/interviewees/interviewee18/interviewee18.component';
+import { ShareSocialNetworkComponent } from './components/share-social-network/share-social-network.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { Interviewee18Component } from './components/interviewees/interviewee18/
     Interviewee16Component,
     Interviewee17Component,
     Interviewee18Component,
+    ShareSocialNetworkComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,9 @@
+<div class="share-social-wrapper">
+  <a [href]="link.shareUrl + encodedUrl" mat-icon-button *ngFor="let link of links">
+    <mat-icon
+      class="icon-link"
+      aria-hidden="false"
+      [svgIcon]="link.icon"
+    ></mat-icon>
+  </a>
+</div>

@@ -6,11 +6,10 @@
     <p>licencia 2021</p>
   </div>
 
-  <div class="share">
-    <a href="" mat-icon-button *ngFor="let link of links">
+  <div class="social-links">
+    <a [href]="link.url" mat-icon-button *ngFor="let link of links">
       <mat-icon
         aria-hidden="false"
-        aria-label="Share with Facebook"
         [svgIcon]="link.icon"
       ></mat-icon>
     </a>

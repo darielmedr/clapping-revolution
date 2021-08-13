@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  public links: { icon: string }[] = [
-    { icon: 'twitter' },
-    { icon: 'facebook' },
-    { icon: 'instagram' },
-    { icon: 'telegram' },
-    { icon: 'youtube' },
-    { icon: 'heart' },
+  public links: { icon: string, url: string }[] = [
+    { icon: 'twitter', url: '' },
+    { icon: 'facebook', url: '' },
+    { icon: 'instagram', url: '' },
+    { icon: 'telegram', url: '' },
+    { icon: 'youtube', url: '' },
+    { icon: 'heart', url: '' },
   ];
 
   @Input()

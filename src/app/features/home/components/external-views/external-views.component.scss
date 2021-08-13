@@ -17,11 +17,6 @@
     border: solid 2px var(--color-text-400);
     padding: 1.6rem;
 
-    .mat-icon {
-      width: 9rem;
-      height: 9rem;
-    }
-
     .info {
       width: max-content;
 
@@ -37,15 +32,8 @@
   .wrapper {
     gap: 6rem;
 
-    a {
-      .mat-icon {
-        width: 9rem;
-        height: 9rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+    p {
+      font-size: 1rem;
     }
   }
 }
