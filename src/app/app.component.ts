@@ -25,75 +25,75 @@ export class AppComponent implements OnInit, OnDestroy {
     ) {
       this.matIconRegistry.addSvgIcon(
         "arrowDown",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/arrow-down.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/arrow-down.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebook",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/facebook.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/facebook.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "instagram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/instagram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/instagram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "telegram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "twitter",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "youtube",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/youtube.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/youtube.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "heart",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/heart.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/heart.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebookLives",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/instagram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/instagram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "docPdf",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "comicBook",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "close",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "paper",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "eye",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "ear",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/youtube.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/youtube.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebookDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/facebook.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/facebook.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "twitterDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "telegramDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "whatsappDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/icons/instagram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/instagram.svg")
       );
     }
 
