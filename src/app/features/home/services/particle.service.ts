@@ -3,11 +3,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ParticleService {
 
-  private repellerImage: string = 'https://i.imgur.com/huHfr63.png';
+  private repellerColor: string = '#ffffff';
 
-  private images: Array<string> = [
-    'https://i.imgur.com/huHfr63.png',
-    // 'https://i.imgur.com/nXQPaQN.png'
+  private colors: Array<string> = [
+    '#aaa389',
+    '#f6e339',
+    '#3758c3',
+    '#cc1184',
+    '#1d6d14',
+    '#ff4000',
+    '#2a2927'
   ];
 
   constructor() { }
@@ -16,11 +21,11 @@ export class ParticleService {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  public getRandomImage(): string {
-    return this.images[this.getRandomIntFromRange(this.images.length - 1)];
+  public getRandomColor(): string {
+    return this.colors[this.getRandomIntFromRange(this.colors.length - 1)];
   }
 
-  public getRepelerImage(): string {
-    return this.repellerImage;
+  public getRepelerColor(): string {
+    return this.repellerColor;
   }
 }

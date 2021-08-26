@@ -1,24 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { InterviewedService } from '../../core/services/interviewed.service';
-import { Observable } from 'rxjs';
-import Interviewed from '../../shared/models/interviewed';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IntervieweeService } from '../../core/services/interviewee.service';
+import { Observable, Subject } from 'rxjs';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-interview',
   templateUrl: './interview.component.html',
-  styleUrls: ['./interview.component.scss'],
-  providers: [InterviewedService],
+  styleUrls: ['./interview.component.scss']
 })
-export class InterviewComponent implements OnInit {
+export class InterviewComponent implements OnInit, OnDestroy {
 
-  public interviewees$: Observable<Array<Interviewed>> = new Observable();
+  private unsubscribe$: Subject<void> = new Subject();
+
+  public interviewees$: Observable<Array<Interviewee>> = new Observable();
   public isHandset$: Observable<boolean> = new Observable();
+
+  public isMenuOpened: boolean = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private interviewedService: InterviewedService
+    private intervieweeService: IntervieweeService,
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +31,19 @@ export class InterviewComponent implements OnInit {
         shareReplay()
       );
 
-    this.interviewees$ = this.interviewedService.getInterviewees();
+    this.interviewees$ = this.intervieweeService.getInterviewees();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  public openMenu(): void {
+    this.isMenuOpened = true;
+  }
+
+  public closeMenu(): void {
+    this.isMenuOpened = false;
+  }
 }

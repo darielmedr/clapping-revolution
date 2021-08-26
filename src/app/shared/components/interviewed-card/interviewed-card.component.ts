@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Interviewed from '../../models/interviewed';
+import Interviewee from '../../models/interviewee.model';
 
 @Component({
   selector: 'app-interviewed-card',
@@ -9,12 +9,21 @@ import Interviewed from '../../models/interviewed';
 export class InterviewedCardComponent implements OnInit {
 
   @Input()
-  public interviewed: Interviewed | null = {
+  public interviewed: Interviewee | null = {
     id: 0,
     name: '',
     picture: '',
     quotes: ''
   };
+
+  @Input()
+  public hideQuote: boolean = true;
+
+  @Input()
+  public showShadow: boolean = true;
+
+  @Input()
+  public isCardDetail: boolean = false;
 
   constructor() { }
 

@@ -3,7 +3,7 @@ header {
 
   .top-bar {
     position: absolute;
-    height: var(--top);
-    padding-left: var(--left-margin);
+    padding-top: var(--border-margin);
+    padding-left: var(--border-margin);
   }
 }

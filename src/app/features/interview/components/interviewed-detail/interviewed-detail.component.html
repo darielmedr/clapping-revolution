@@ -1,4 +1,8 @@
-
 <div class="card">
-    <app-interviewed-card [interviewed]="interviewed$ | async"></app-interviewed-card>
+  <app-interviewed-card
+    [interviewed]="interviewed$ | async"
+    [hideQuote]="false"
+    [showShadow]="false"
+    [isCardDetail]="true"
+  ></app-interviewed-card>
 </div>

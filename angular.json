@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fonts/custom-fonts.scss"
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -100,7 +101,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fonts/custom-fonts.scss"
             ],
             "scripts": []
           }

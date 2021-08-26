@@ -1,15 +1,10 @@
-<div #videoWrapper class="video-wrapper">
-    <youtube-player
-        [videoId]="videoId"
-        [width]="width"
-        [height]="height"
-    >
-    </youtube-player>
-
-    <div class="video-poster" *ngIf="posterUrl && !isVideoPlaying">
-        <img id="poster" [src]="posterUrl" alt="video poster">
-        <div (click)="playVideo()">
-            <mat-icon id="play-icon">play_arrow</mat-icon>
-        </div>
-    </div>
-</div>
+<div class="yt-player-container">
+    <iframe
+      class="yt-player"
+      [src]="videoSrcSaveUrl"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>

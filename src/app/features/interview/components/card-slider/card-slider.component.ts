@@ -1,17 +1,24 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { InterviewedService } from 'src/app/core/services/interviewed.service';
-import Interviewed from 'src/app/shared/models/interviewed';
+import { IntervieweeService } from 'src/app/core/services/interviewee.service';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-card-slider',
   templateUrl: './card-slider.component.html',
-  styleUrls: ['./card-slider.component.scss']
+  styleUrls: ['./card-slider.component.scss'],
 })
 export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
-
-  public interviewees: Array<Interviewed> = [];
+  public interviewees: Array<Interviewee> = [];
 
   @ViewChild('slidesRef') slidesRef!: ElementRef;
   @ViewChild('slideRef') slideRef!: ElementRef;
@@ -19,24 +26,44 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
   public numberOfShownSlides: number = 3;
   public currentIndex: number = this.numberOfShownSlides;
 
-  private unsuscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject();
 
-  constructor(private interviewedService: InterviewedService) { }
+  constructor(private intervieweeService: IntervieweeService) {}
 
   ngOnInit(): void {
-    this.interviewedService.getInterviewees().pipe(takeUntil(this.unsuscribe$)).subscribe(
-      (interviewees: Interviewed[]) => this.interviewees = interviewees
-    );
+    this.intervieweeService
+      .getInterviewees()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (interviewees: Interviewee[]) => (this.interviewees = interviewees)
+      );
   }
 
   ngOnDestroy(): void {
-    this.unsuscribe$.next();
+    this.slidesRef.nativeElement.removeEventListener(
+      'transitionend',
+      this.handleTransitionEnd
+    );
+
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   ngAfterViewInit(): void {
-    window.addEventListener('resize', this.handleWindowResize);
-    this.slidesRef.nativeElement.addEventListener('transitionend', this.handleTransitionEnd);
+    fromEvent(window, 'resize')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        this.handleWindowResize();
+      });
+    this.slidesRef.nativeElement.addEventListener(
+      'transitionend',
+      this.handleTransitionEnd
+    );
     this.setCurrentSlidePosition();
+  }
+
+  public setIntervieweeById(id: number): void {
+    this.intervieweeService.setIntervieweeById(id);
   }
 
   public setSlideAtIndex(slideIndex: number): void {
@@ -61,7 +88,8 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private setSliderTransition(): void {
-    this.slidesRef.nativeElement.style.transition = 'transform 0.5s ease-in-out';
+    this.slidesRef.nativeElement.style.transition =
+      'transform 0.5s ease-in-out';
   }
 
   private removeSliderTransition(): void {
@@ -70,11 +98,17 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private setCurrentSlidePosition(): void {
     const slideWidth = this.slideRef.nativeElement.clientWidth;
-    this.slidesRef.nativeElement.style.transform = `translateX(${-slideWidth * this.currentIndex}px)`;
+    this.slidesRef.nativeElement.style.transform = `translateX(${
+      -slideWidth * this.currentIndex
+    }px)`;
   }
 
   private setNextIndex(): void {
-    if (this.currentIndex >= this.interviewees.length + this.numberOfShownSlides) return;
+    if (
+      this.currentIndex >=
+      this.interviewees.length + this.numberOfShownSlides
+    )
+      return;
     this.currentIndex++;
   }
 
@@ -84,7 +118,10 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private handleTransitionEnd = () => {
-    if (this.currentIndex === this.interviewees.length + this.numberOfShownSlides) {
+    if (
+      this.currentIndex ===
+      this.interviewees.length + this.numberOfShownSlides
+    ) {
       this.removeSliderTransition();
       this.currentIndex = this.numberOfShownSlides;
       this.setCurrentSlidePosition();
@@ -97,12 +134,12 @@ export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
       this.setCurrentSlidePosition();
       return;
     }
-  }
+  };
 
-  private handleWindowResize = () => {
+  private handleWindowResize() {
     if (window.innerWidth < 520) {
       this.numberOfShownSlides = 1;
-    } else if (window.innerWidth < 700) {
+    } else if (window.innerWidth < 770) {
       this.numberOfShownSlides = 2;
     } else {
       this.numberOfShownSlides = 3;

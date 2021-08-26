@@ -6,11 +6,12 @@ export default class Repeller extends DrawerDOM {
 
     constructor(
         radius: number = 10,
-        imageUrl: string = '',
+        color: string = '',
         position: Vector = new Vector(),
         public power: number = 10
     ) {
-        super(radius, imageUrl, position);
+        super(radius, color, position);
+        this.addStyleClass('cursor');
     }
 
     public checkCollision(particle: Particle) {

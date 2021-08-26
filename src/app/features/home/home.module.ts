@@ -7,19 +7,21 @@ import { CanvasBallsComponent } from './components/canvas-balls/canvas-balls.com
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { InterviewedGridComponent } from './components/interviewed-grid/interviewed-grid.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ExternalViewsComponent } from './components/external-views/external-views.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     CanvasBallsComponent,
-    InterviewedGridComponent
+    InterviewedGridComponent,
+    ExternalViewsComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class HomeModule { }

@@ -1,6 +1,5 @@
 .logo-container {
   overflow: hidden;
-  position: absolute;
 
   img {
     width: 100px;
@@ -22,7 +21,7 @@
 @media screen and (min-width: 1024px) {
   .logo-container {
     img {
-      max-width: 150px;
+      max-width: 15rem;
     }
   }
 }
@@ -30,7 +29,7 @@
 @media screen and (min-width: 1440px) {
   .logo-container {
     img {
-      max-width: 200px;
+      max-width: 20rem;
     }
   }
 }
@@ -38,7 +37,7 @@
 @media screen and (min-width: 2000px) {
   .logo-container {
     img {
-      max-width: 250px;
+      max-width: 25rem;
     }
   }
 }

@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { InterviewedService } from 'src/app/core/services/interviewed.service';
-import Interviewed from '../../../../shared/models/interviewed';
+import { IntervieweeService } from 'src/app/core/services/interviewee.service';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-interviewed-grid',
   templateUrl: './interviewed-grid.component.html',
-  styleUrls: ['./interviewed-grid.component.scss'],
-  providers: [InterviewedService]
+  styleUrls: ['./interviewed-grid.component.scss']
 })
 export class InterviewedGridComponent implements OnInit {
 
-  public interviewees$: Observable<Array<Interviewed>> = new Observable();
+  public interviewees$: Observable<Array<Interviewee>> = new Observable();
 
-  constructor(private interviewedService: InterviewedService) { }
+  constructor(private intervieweeService: IntervieweeService) { }
 
   ngOnInit(): void {
-    this.interviewees$ = this.interviewedService.getInterviewees();
+    this.interviewees$ = this.intervieweeService.getInterviewees();
   }
 }

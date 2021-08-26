@@ -1,21 +1,166 @@
-import { Component, HostListener } from '@angular/core';
-import { WindowScrollService } from './shared/services/window-scroll.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { fromEvent, Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
+import { IntervieweeService } from './core/services/interviewee.service';
+import { WindowService } from './core/services/window.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
 
-  constructor(private windowScrollService: WindowScrollService) { }
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
-  @HostListener('window:scroll') onScroll(): void {
-    const scrolledTopOffset = this.getTopPosition();
-    this.windowScrollService.update(scrolledTopOffset);
+  constructor(
+    private windowService: WindowService,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+    private intervieweeService: IntervieweeService,
+    private router: Router
+    ) {
+      this.matIconRegistry.addSvgIcon(
+        "arrowDown",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/arrow-down.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "facebook",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/facebook.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "instagram",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/instagram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "telegram",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/telegram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "twitter",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "youtube",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/youtube.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "heart",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/heart.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "facebookLives",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/instagram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "docPdf",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/telegram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "comicBook",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "close",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "paper",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/telegram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "eye",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "ear",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/youtube.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "facebookDark",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/facebook.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "twitterDark",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/twitter.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "telegramDark",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/telegram.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "whatsappDark",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/images/icons/instagram.svg")
+      );
+    }
+
+  ngOnInit(): void {
+    this.detectWindowResize();
+    this.detectWindowScroll();
+    this.listenOnRouteChange();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  private detectWindowResize(): void {
+    fromEvent(window, 'resize')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        this.windowService.updateScreenWidth(document.body.clientWidth);
+      });
+  }
+
+  private detectWindowScroll(): void {
+    fromEvent(window, 'scroll')
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        const scrolledTopOffset = this.getTopPosition();
+        this.windowService.updateScrollTop(scrolledTopOffset);
+      });
   }
 
   private getTopPosition(): number {
     return window.scrollY;
+  }
+
+  private listenOnRouteChange(): void {
+    this.router.events
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event: NavigationEnd) => {
+        const id: number | undefined = this.extractIdOfRoute(event.urlAfterRedirects);
+
+        if (id) {
+          this.setIntervieweeById(id);
+        }
+      });
+  }
+  private extractIdOfRoute(routePath: string): number | undefined {
+
+    const pathSegments: string[] = routePath.split('/');
+
+    const interviewPath: string = pathSegments[pathSegments.length - 2];
+
+    if (interviewPath !== 'interview') {
+      return undefined;
+    }
+
+    const idString: string = pathSegments[pathSegments.length - 1];
+    const id: number = Number(idString);
+
+    return id === NaN ? undefined : id;
+  }
+  public setIntervieweeById(id: number): void {
+    this.intervieweeService.setIntervieweeById(id);
   }
 }

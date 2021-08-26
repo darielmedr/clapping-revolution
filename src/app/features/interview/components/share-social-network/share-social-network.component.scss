@@ -1,0 +1,18 @@
+.share-social-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+
+  a .icon-link {
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .share-social-wrapper {
+    gap: 0.5rem;
+    margin: 4rem 0 7rem 0;
+  }
+}

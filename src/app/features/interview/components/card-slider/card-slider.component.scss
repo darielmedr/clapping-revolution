@@ -1,7 +1,11 @@
+$arrow-size: 3.2rem;
+
 .carousel-container {
   display: flex;
-  width: 100%;
+  width: 110%;            // arrow buttons outside main margin
+  margin-left: -5%;       // center carousel
   align-items: center;
+  justify-content: space-evenly;
 
   .carousel {
     height: 100%;
@@ -15,26 +19,22 @@
       }
     }
   }
-  .btn-prev,
-  .btn-next {
-    margin: 0 3%;
+  .btn-arrow {
+    font-size: $arrow-size;
+    width: $arrow-size;
+    height: $arrow-size;
+    border-radius: 50%;
 
-    .mat-icon {
-      width: calc(var(--font-size-text) + 1rem);
-      height: calc(var(--font-size-text) + 1rem);
-      border-radius: 50%;
-      background-color: transparent;
-      border: solid 1px var(--color-text-400);
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    }
 
-      color: var(--color-text-400);
-      display: grid;
-      place-content: center;
+    &.prev {
+      transform: rotateZ(90deg);
+    }
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-      }
+    &.next {
+      transform: rotateZ(-90deg);
     }
   }
 }
@@ -51,7 +51,7 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 770px) {
   .carousel-container {
     .carousel {
       .slides {

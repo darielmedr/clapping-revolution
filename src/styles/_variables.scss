@@ -1,0 +1,67 @@
+:root {
+  // Colors
+  --color-text-400: hsl(0, 0%, 0%);
+  --color-bg-100: hsl(48, 8%, 88%);
+  --color-accent: hsl(15, 100%, 50%);
+
+  // Font Families
+  --font-family: "AkzidenzGrotesk";
+
+  // Font Weights
+  --font-weight-normal: 300;
+  --font-weight-medium: 400;
+  --font-weight-bolder: 900;
+
+  // Font Sizes
+  --font-size-text: 1.1rem;
+  --font-size-title: 2.4rem;
+
+  --icon-size-action: 3.5rem;
+
+  // Spaces and margin
+  --border-margin: 5.1rem;
+
+  @media screen and (min-width: 768px) {
+    --icon-size-action: 5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    // Font Sizes
+    --font-size-text: 1.25rem;
+    --font-size-title: 2.8rem;
+
+    --icon-size-action: 5rem;
+
+    // Spaces and margin
+    --border-margin: 6rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    // Font Sizes
+    --font-size-text: 1.4rem;
+    --font-size-title: 3.5rem;
+
+    // Spaces and margin
+    --border-margin: 7rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    // Font Sizes
+    --font-size-text: 1.8rem;
+    --font-size-title: 5rem;
+
+    --icon-size-action: 6.5rem;
+
+    // Spaces and margin
+    --border-margin: 8rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    // Font Sizes
+    --font-size-text: 2.2rem;
+    --font-size-title: 6.66rem;
+
+    // Spaces and margin
+    --border-margin: 9.254rem;
+  }
+}

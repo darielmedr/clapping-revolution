@@ -7,44 +7,53 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  text-transform: uppercase;
 
   h1 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-medium);
+    padding: 1rem 0;
     z-index: 2;
     pointer-events: none;
-    margin-top: -3em;
-    text-transform: uppercase;
   }
 
   p {
     pointer-events: none;
-    text-transform: uppercase;
-    font-size: calc(var(--font-size-text) * 0.75);
+    font-size: calc(0.36 * var(--font-size-title));
     z-index: 2;
   }
 
   .sroll-down-button {
-    position: absolute;
-    bottom: 20%;
+    margin-top: 3rem;
     cursor: pointer;
     z-index: 2;
   }
   .mat-icon {
-    font-size: calc(var(--font-size-title) + 1.5rem);
-    width: calc(var(--font-size-title) + 5px);
-    height: calc(var(--font-size-title) + 5px);
-    border-radius: 50%;
-    border: solid 1px;
-    display: grid;
-    place-content: center;
-    animation: bounceUpDown 3.5s linear infinite;
+    width: calc(var(--font-size-title) + 0.5rem);
+    height: calc(var(--font-size-title) + 0.5rem);
+    animation: bounceUpDown 2s linear infinite;
+  }
+}
+
+.scroll-up {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 5rem;
+
+  .mat-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: rotate(180deg);
   }
 }
 
 @keyframes bounceUpDown {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(60%);
+    transform: translateY(50%);
   }
 }
