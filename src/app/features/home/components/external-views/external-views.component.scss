@@ -1,3 +1,5 @@
+$icon-size: 7rem;
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -11,11 +13,18 @@
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    // justify-content: space-evenly;
     width: 23.8rem;
     height: 11.4rem;
     border-radius: 6rem;
     border: solid 2px var(--color-text-400);
     padding: 1.6rem;
+
+    .mat-icon {
+      width: $icon-size;
+      height: $icon-size;
+      font-size: $icon-size;
+    }
 
     .info {
       width: max-content;
