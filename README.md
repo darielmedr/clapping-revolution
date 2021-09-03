@@ -2,14 +2,12 @@
 
 This project is an article for [Periodismo de Barrio]('https://www.periodismodebarrio.org/').
 
-
 ## Table of contents
 
 - [Built with](#built-with)
 - [Links](#links)
 - [TODO](#todo)
 - [Author](#author)
-
 
 ## Built with
 
@@ -25,7 +23,6 @@ This project is an article for [Periodismo de Barrio]('https://www.periodismodeb
 
 <!-- - Solution URL: [https://github.com/darielmedr/REST-Countries-API-color-theme-angular](https://github.com/darielmedr/REST-Countries-API-color-theme-angular)
 - Live Site URL: [https://darielmedr.github.io/REST-Countries-API-color-theme-angular](https://darielmedr.github.io/REST-Countries-API-color-theme-angular) -->
-
 
 ## TODO
 
