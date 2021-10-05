@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
     { icon: 'instagram', url: '' },
     { icon: 'telegram', url: '' },
     { icon: 'youtube', url: '' },
-    { icon: 'heart', url: '' },
+    { icon: 'cloud', url: '' },
   ];
 
   @Input()

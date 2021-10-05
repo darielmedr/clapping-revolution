@@ -6,6 +6,7 @@ import Interviewee from 'src/app/shared/models/interviewee.model';
   providedIn: 'root',
 })
 export class IntervieweeService {
+
   private interviewees: Array<Interviewee> = [
     {
       id: 1,

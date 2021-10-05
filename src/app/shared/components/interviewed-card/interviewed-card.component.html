@@ -1,11 +1,8 @@
-<mat-card
-  [ngClass]="{ shadow: showShadow }"
-  appShowInView
-  className="highlight"
-  [showShadow]="showShadow"
->
+<mat-card [ngClass]="{ shadow: showShadow }">
   <img mat-card-image [src]="interviewed?.picture" [alt]="interviewed?.name" />
-  <mat-card-title [ngClass]="{ 'is-title-detail': isCardDetail }">{{ interviewed?.name }}</mat-card-title>
+  <mat-card-title [ngClass]="{ 'is-title-detail': isCardDetail }">{{
+    interviewed?.name
+  }}</mat-card-title>
   <mat-card-content>
     <p *ngIf="!hideQuote" [ngClass]="{ 'is-subtitle-detail': isCardDetail }">
       {{ interviewed?.quotes }}

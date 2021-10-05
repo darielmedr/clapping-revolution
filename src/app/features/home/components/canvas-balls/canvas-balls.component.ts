@@ -17,6 +17,7 @@ import Canvas from '../../models/Canvas';
   styleUrls: ['./canvas-balls.component.scss'],
 })
 export class CanvasBallsComponent implements OnInit, AfterViewInit, OnDestroy {
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   @ViewChild('canvasRef')

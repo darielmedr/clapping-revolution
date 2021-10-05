@@ -48,36 +48,36 @@ export class AppComponent implements OnInit, OnDestroy {
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/youtube.svg")
       );
       this.matIconRegistry.addSvgIcon(
-        "heart",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/heart.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "facebookLives",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/instagram.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "docPdf",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "comicBook",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
+        "cloud",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/cloud.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "close",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/close.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "paper",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/texto-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "eye",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/video-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "ear",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/youtube.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/audio-off.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "paperOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/texto-on.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "eyeOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/video-on.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "earOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/on-audio.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebookDark",
@@ -99,7 +99,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.detectWindowResize();
-    this.detectWindowScroll();
     this.listenOnRouteChange();
   }
 
@@ -114,19 +113,6 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.windowService.updateScreenWidth(document.body.clientWidth);
       });
-  }
-
-  private detectWindowScroll(): void {
-    fromEvent(window, 'scroll')
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(() => {
-        const scrolledTopOffset = this.getTopPosition();
-        this.windowService.updateScrollTop(scrolledTopOffset);
-      });
-  }
-
-  private getTopPosition(): number {
-    return window.scrollY;
   }
 
   private listenOnRouteChange(): void {
