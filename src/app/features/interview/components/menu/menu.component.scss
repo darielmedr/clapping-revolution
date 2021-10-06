@@ -8,7 +8,7 @@ $rowTitleHeight: 6rem;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 999;
   text-align: center;
 
@@ -37,7 +37,9 @@ $rowTitleHeight: 6rem;
   }
 
   .links {
-    height: calc(100% - #{$rowBtnHeight} - #{$rowTitleHeight} - 1.5rem);
+    overscroll-behavior: contain;
+    height: calc(100% - #{$rowBtnHeight} - #{$rowTitleHeight});
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -46,6 +48,10 @@ $rowTitleHeight: 6rem;
     padding: 3rem 0;
     font-size: var(--font-size-text);
     animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    li:first-child {
+      margin-top: 10rem;
+    }
   }
 }
 
@@ -62,6 +68,10 @@ $rowTitleHeight: 6rem;
     height: calc(
       100% - #{$rowBtnHeight} - #{$rowTitleHeight} - 3rem
     ) !important;
+
+    li:first-child {
+      margin-top: 0;
+    }
   }
 }
 
