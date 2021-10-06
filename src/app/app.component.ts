@@ -25,75 +25,75 @@ export class AppComponent implements OnInit, OnDestroy {
     ) {
       this.matIconRegistry.addSvgIcon(
         "arrowDown",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/arrow-down.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/utils/arrow-down.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebook",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/facebook.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/facebook.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "instagram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/instagram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/instagram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "telegram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/telegram.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "twitter",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/twitter.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "youtube",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/youtube.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/youtube.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "cloud",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/cloud.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/cloud.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "close",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/close.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/utils/close.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "paper",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/texto-off.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/texto-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "eye",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/video-off.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/video-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "ear",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/audio-off.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/audio-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "paperOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/texto-on.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/texto-on.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "eyeOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/video-on.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/video-on.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "earOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/on-audio.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/on-audio.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "facebookDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/facebook-dark.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/facebook-dark.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "twitterDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/twitter-dark.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/twitter-dark.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "telegramDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/telegram-dark.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/telegram-dark.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "whatsappDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/whatsapp-dark.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/whatsapp-dark.svg")
       );
     }
 
