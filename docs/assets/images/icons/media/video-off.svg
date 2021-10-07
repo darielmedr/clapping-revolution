@@ -1,0 +1,22 @@
+<svg id="Boton_Video" data-name="Boton Video" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #2a2927;
+        stroke-width: 1.536px;
+      }
+
+      .cls-1, .cls-2 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="Boton" class="cls-1" cx="34.688" cy="34.578" r="31.5"/>
+  <path id="Boton_copia" data-name="Boton copia" class="cls-2" d="M34.627,23.312c11.953,0,21.642,5.014,21.642,11.2s-9.69,11.2-21.642,11.2S12.985,40.7,12.985,34.511,22.674,23.312,34.627,23.312Z"/>
+  <circle id="Elipse_2" data-name="Elipse 2" class="cls-3" cx="34.781" cy="34.688" r="10.969"/>
+</svg>
