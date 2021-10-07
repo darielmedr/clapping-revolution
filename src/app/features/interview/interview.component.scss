@@ -60,6 +60,20 @@ $sidenavPadding: 2rem;
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    .interview {
+      &-sidenav {
+        .mat-expansion-panel {
+          .mat-list-item {
+            height: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1700px) {
   .wrapper {
     .interview {
