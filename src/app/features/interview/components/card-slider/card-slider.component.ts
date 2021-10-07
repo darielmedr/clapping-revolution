@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  Input,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -18,6 +17,7 @@ import Interviewee from 'src/app/shared/models/interviewee.model';
   styleUrls: ['./card-slider.component.scss'],
 })
 export class CardSliderComponent implements OnInit, OnDestroy, AfterViewInit {
+
   public interviewees: Array<Interviewee> = [];
 
   @ViewChild('slidesRef') slidesRef!: ElementRef;

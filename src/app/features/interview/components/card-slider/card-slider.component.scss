@@ -25,10 +25,6 @@ $arrow-size: 3.2rem;
     height: $arrow-size;
     border-radius: 50%;
 
-    &:hover {
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-    }
-
     &.prev {
       transform: rotateZ(90deg);
     }

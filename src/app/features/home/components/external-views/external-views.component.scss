@@ -19,10 +19,9 @@ $icon-size: 7rem;
     border: solid 2px var(--color-text-400);
     padding: 1.6rem;
 
-    .mat-icon {
-      width: $icon-size;
+    .icon {
+      width: auto;
       height: $icon-size;
-      font-size: $icon-size;
     }
 
     .info {

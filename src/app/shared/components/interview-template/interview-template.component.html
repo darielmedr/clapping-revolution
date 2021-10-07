@@ -1,9 +1,10 @@
 <mat-tab-group mat-align-tabs="center">
-  <mat-tab aria-label="Interview text">
+  <mat-tab #textTabRef aria-label="Interview text">
     <ng-template mat-tab-label>
       <mat-icon
+        [ngClass]="{ 'selected': textTabRef.isActive }"
         aria-hidden="false"
-        aria-label="Interview text"
+        aria-label="Interview text icon"
         svgIcon="paper"
       ></mat-icon>
     </ng-template>
@@ -13,22 +14,24 @@
     </article>
   </mat-tab>
 
-  <mat-tab aria-label="Interview video">
+  <mat-tab #videoTabRef aria-label="Interview video">
     <ng-template mat-tab-label>
       <mat-icon
+        [ngClass]="{ 'selected': videoTabRef.isActive }"
         aria-hidden="false"
-        aria-label="Interview video"
+        aria-label="Interview video icon"
         svgIcon="eye"
       ></mat-icon>
     </ng-template>
     <app-yt-player [videoId]="videoId"></app-yt-player>
   </mat-tab>
 
-  <mat-tab aria-label="Interview audio">
+  <mat-tab #audioTabRef aria-label="Interview audio">
     <ng-template mat-tab-label>
       <mat-icon
+        [ngClass]="{ 'selected': audioTabRef.isActive }"
         aria-hidden="false"
-        aria-label="Interview audio"
+        aria-label="Interview audio icon"
         svgIcon="ear"
       ></mat-icon>
     </ng-template>

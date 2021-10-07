@@ -8,11 +8,7 @@
     ></mat-icon>
   </button>
 
-  <div
-    class="carousel"
-    (swiperight)="setPreviousSlide()"
-    (swipeleft)="setNextSlide()"
-  >
+  <div class="carousel">
     <div #slidesRef class="slides" *ngIf="interviewees">
       <ng-container
         *ngFor="

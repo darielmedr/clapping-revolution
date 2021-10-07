@@ -25,12 +25,12 @@
 
   .sroll-down-button {
     margin-top: 3rem;
-    cursor: pointer;
+    pointer-events: none;
     z-index: 2;
   }
   .mat-icon {
-    width: calc(var(--font-size-title) + 0.5rem);
-    height: calc(var(--font-size-title) + 0.5rem);
+    width: calc(var(--font-size-title) + 1rem);
+    height: calc(var(--font-size-title) + 1rem);
     animation: bounceUpDown 2s linear infinite;
   }
 }

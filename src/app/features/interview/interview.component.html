@@ -52,7 +52,10 @@
       </mat-expansion-panel>
     </mat-drawer>
 
-    <div class="interview-content">
+    <div
+      class="interview-content"
+      [ngClass]="{ 'centered': (isHandset$ | async) }"
+    >
       <app-interviewed-detail></app-interviewed-detail>
       <router-outlet></router-outlet>
       <app-share-social-network></app-share-social-network>
