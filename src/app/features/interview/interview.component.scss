@@ -50,7 +50,7 @@ $sidenavPadding: 2rem;
       padding-top: calc(
         2 * 2rem + #{$sidenavPadding}
       ); // 2rem = mat-toolbar.row's height
-      padding-left: 5rem;
+      padding-left: 10rem;
 
       &.centered {
         margin: 0 auto;
