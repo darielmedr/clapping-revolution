@@ -1,0 +1,5 @@
+$navbar-height: 8rem;
+
+::ng-deep mat-tab-header {
+    margin-bottom: calc(20vh + #{$navbar-height}) !important;
+}

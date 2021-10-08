@@ -5,7 +5,7 @@ $sidenavPadding: 2rem;
   position: relative;
 
   .interview {
-    min-height: calc(100vh - var(--top));
+    height: calc(100vh - var(--top-navbar));
 
     &-sidenav {
       max-width: $sidenavWidth;
