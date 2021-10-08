@@ -68,6 +68,18 @@ export class AppComponent implements OnInit, OnDestroy {
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/audio-off.svg")
       );
       this.matIconRegistry.addSvgIcon(
+        "paperOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/texto-on.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "eyeOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/video-on.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "earOn",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/audio-on.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
         "facebookDark",
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/facebook-dark.svg")
       );
