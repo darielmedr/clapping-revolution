@@ -25,7 +25,7 @@
 
   .sroll-down-button {
     margin-top: 3rem;
-    pointer-events: none;
+    pointer-events: all;
     z-index: 2;
   }
   .mat-icon {
@@ -55,5 +55,13 @@
   }
   50% {
     transform: translateY(50%);
+  }
+}
+
+@media screen and (min-width: 786px) {
+  .home {
+    .sroll-down-button {
+      pointer-events: none;
+    }
   }
 }
