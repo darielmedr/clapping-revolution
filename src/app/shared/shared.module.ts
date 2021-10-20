@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CoreModule } from '../core/core.module';
 import { YtPlayerComponent } from './components/yt-player/yt-player.component';
 import { InterviewTemplateComponent } from './components/interview-template/interview-template.component';
+import { SoundcloudAudioPlayerComponent } from './components/soundcloud-audio-player/soundcloud-audio-player.component';
 
 const commonElementes: any[] = [
   YtPlayerComponent,
@@ -17,6 +18,7 @@ const commonElementes: any[] = [
 @NgModule({
   declarations: [
     ...commonElementes,
+    SoundcloudAudioPlayerComponent,
   ],
   imports: [
     CommonModule,
