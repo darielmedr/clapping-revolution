@@ -9,7 +9,7 @@ export class InterviewTemplateComponent implements OnInit {
 
 
   @Input()
-  public audioSrc: string = '';
+  public audioId: string = '';
 
   @Input()
   public videoId: string = '';

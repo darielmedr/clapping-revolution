@@ -8,9 +8,9 @@
       ></mat-icon>
     </ng-template>
 
-    <article class="interview-text">
+    <section class="interview-text">
       <ng-content></ng-content>
-    </article>
+    </section>
   </mat-tab>
 
   <mat-tab #videoTabRef aria-label="Interview video">
@@ -32,10 +32,6 @@
         [svgIcon]="audioTabRef.isActive ? 'earOn' : 'ear'"
       ></mat-icon>
     </ng-template>
-
-    <audio controls class="w-100">
-      <source [src]="audioSrc" />
-      Your browser does not support the audio element.
-    </audio>
+    <app-soundcloud-audio-player [audioId]="audioId"></app-soundcloud-audio-player>
   </mat-tab>
 </mat-tab-group>

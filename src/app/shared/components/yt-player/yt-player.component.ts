@@ -10,13 +10,13 @@ export class YtPlayerComponent implements OnInit {
   @Input()
   public videoId: string = '';
 
-  private ytUrlBase: string = 'https://www.youtube-nocookie.com/embed/';
-  public videoSrcSaveUrl: SafeResourceUrl = '';
+  private baseUrl: string = 'https://www.youtube-nocookie.com/embed/';
+  public srcSafeUrl: SafeResourceUrl = '';
 
   constructor(private domSanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    const videoSrc = this.ytUrlBase + this.videoId;
-    this.videoSrcSaveUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(videoSrc);
+    const videoSrc = this.baseUrl + this.videoId;
+    this.srcSafeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(videoSrc);
   }
 }

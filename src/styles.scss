@@ -40,12 +40,29 @@ body {
 
 p {
   font-size: var(--font-size-text);
-  padding: 1rem 0;
+  padding: 1.3rem 0;
+}
+
+h4 {
+  padding: 1.3rem 0;
+}
+
+article > * {
+  color: var(--color-text-100);
+  letter-spacing: 0.5px;
 }
 
 a {
   text-decoration: none;
   color: var(--color-text-400);
+}
+
+.link-higthlight {
+  color: var(--color-accent);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul {
