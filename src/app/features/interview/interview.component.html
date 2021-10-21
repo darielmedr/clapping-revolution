@@ -20,8 +20,10 @@
     >
       <mat-toolbar>
         <mat-toolbar-row>
-          LA REVOLUCI&Oacute;N <br />
-          DE LOS APLAUSOS
+          <a [routerLink]="['/']">
+            LA REVOLUCI&Oacute;N <br />
+            DE LOS APLAUSOS
+          </a>
         </mat-toolbar-row>
         <mat-toolbar-row>
           <button mat-icon-button (click)="expansionPanelRef.toggle()">
