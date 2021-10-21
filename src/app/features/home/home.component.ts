@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         takeUntil(this.unsubscribe$),
         filter(() => this.isAutoScrollEnabled || window.scrollY === 0),
         tap(() => this.setConfigScrolledTop()),
-        filter(() => window.scrollY > 0),
+        filter(() => window.scrollY > 0)
       )
       .subscribe(() => {
         this.isAutoScrollEnabled = false;
@@ -50,9 +50,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public scrollTo(element: HTMLElement): void {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    window.scrollTo({
+      top: element.offsetTop,
+      left: 0,
+      behavior: 'smooth'
+    })
   }
 }

@@ -43,15 +43,6 @@ p {
   padding: 1.3rem 0;
 }
 
-h4 {
-  padding: 1.3rem 0;
-}
-
-article > * {
-  color: var(--color-text-100);
-  letter-spacing: 0.5px;
-}
-
 a {
   text-decoration: none;
   color: var(--color-text-400);
@@ -110,7 +101,7 @@ ul {
 .mat-tab-nav-bar,
 .mat-tab-header {
   border-bottom: none;
-  margin-bottom: 7rem;
+  margin-bottom: calc(3vh + 8rem);
 }
 
 .mat-tab-label {
