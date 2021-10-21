@@ -3,8 +3,13 @@
 }
 
 .interview-text {
-  text-align: justify;
-  line-height: 1.5;
+  article {
+    color: var(--color-text-100);
+
+    h4 {
+      padding: 1.3rem 0;
+    }
+  }
 
   p:first-child {
     display: flex;
@@ -12,6 +17,7 @@
 
     .first-letter {
       font-size: 10em;
+      font-weight: bold;
       margin: 0 auto;
     }
   }
@@ -25,7 +31,7 @@
       .first-letter {
         float: left;
         line-height: 0.8;
-        padding-right: 1.5rem;
+        padding: 0 1.5rem 1.5rem 0;
         margin: 0;
       }
     }
