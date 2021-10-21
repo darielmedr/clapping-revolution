@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InterviewTemplateComponent implements OnInit {
 
-
   @Input()
   public audioId: string = '';
 
@@ -18,5 +17,4 @@ export class InterviewTemplateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
