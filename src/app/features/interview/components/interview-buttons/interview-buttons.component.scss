@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .mat-icon {
+      font-size: var(--icon-size-action);
+      width: var(--icon-size-action);
+      height: var(--icon-size-action);
+    }
+  }

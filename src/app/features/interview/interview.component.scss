@@ -1,75 +1,93 @@
-$sidenavWidth: 35rem;
-$sidenavPadding: 2rem;
-$contentPadding: 10rem;
+$sidenav-padding: 2rem;
 
 .wrapper {
   position: relative;
 
   .interview {
+    position: relative;
     height: calc(100vh - var(--top-navbar));
+    display: flex;
+    justify-content: center;
 
     &-sidenav {
-      max-width: $sidenavWidth;
-      padding: $sidenavPadding;
+      position: absolute;
+      top: 0;
+      left: -150%;
+      max-width: var(--sidenav-width);
+      padding: $sidenav-padding;
       padding-right: 0;
       border: none;
 
-      .expand-icon {
-        transition: transform 0.5s ease-in-out;
-        width: 4rem;
-        height: 4rem;
+      .mat-toolbar-row {
+        height: var(--sidenav-banner-height);
+        line-height: 1;
+        margin: 1rem 0;
       }
 
-      .arrow-up {
-        transform: rotate(-180deg);
+      .expand-icon {
+        transition: transform 0.5s ease-in-out;
+        width: var(--sidenav-banner-height);
+        height: var(--sidenav-banner-height);
       }
 
       .mat-expansion-panel {
         box-shadow: none;
 
         .mat-list-item {
-          height: 3rem;
-          font-size: calc(var(--font-size-text) * 0.8);
+          height: fit-content;
+          padding: 0.4rem 0;
+          font-size: calc(var(--font-size-text) * 0.7);
           letter-spacing: 0;
 
           &.active-interviewed {
-            color: var(--color-accent);
+            color: var(--color-text-400);
+            font-weight: bold;
+            letter-spacing: 0.5px;
           }
         }
       }
     }
 
-    .mat-drawer-content {
-      margin-left: $sidenavWidth;
+    &-detail {
+      width: var(--interview-detail-width);
+      height: 100%;
+      padding-top: calc(var(--sidenav-banner-height) + #{$sidenav-padding});
     }
+  }
 
-    &-content {
-      max-width: 100rem;
-      width: 80%;
-      margin: 0 auto;
-      margin-right: max(35%, #{$sidenavWidth});
-      padding-top: calc(
-        2 * 2rem + #{$sidenavPadding}
-      ); // 2rem = mat-toolbar.row's height
-      padding-left: $contentPadding;
+  .content {
+    width: max(80%, var(--interview-content-width));
+    margin: 0 auto;
+    padding: 0 2rem;
 
-      &.centered {
-        margin: 0 auto;
-        padding-left: 0;
-      }
+    &__body {
+      padding: 0;
     }
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .wrapper {
+    .content {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .wrapper {
     .interview {
       &-sidenav {
-        .mat-expansion-panel {
-          .mat-list-item {
-            height: 4rem;
-          }
-        }
+        left: 0;
+      }
+    }
+
+    .content {
+      width: max(55%, var(--interview-content-width));
+      padding: 0;
+
+      &__body {
+        padding: 0 3.2rem;
       }
     }
   }

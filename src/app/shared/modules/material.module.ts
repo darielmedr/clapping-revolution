@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,7 +14,6 @@ const modules: any[] = [
   MatButtonModule,
   MatIconModule,
   MatCardModule,
-  MatSidenavModule,
   MatExpansionModule,
   MatListModule,
   MatToolbarModule,

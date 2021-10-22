@@ -7,6 +7,7 @@
 
   // Font Families
   --font-family: "AkzidenzGrotesk";
+  --font-family-text-regular: "text-regular";
 
   // Font Weights
   --font-weight-normal: 300;
@@ -22,10 +23,10 @@
   // Spaces and margin
   --border-margin: 5.1rem;
   --top-navbar: 8rem;
-
-  @media screen and (min-width: 768px) {
-    --icon-size-action: 5rem;
-  }
+  --sidenav-width: 35rem;
+  --sidenav-banner-height: 4rem;
+  --interview-detail-width: 30rem;
+  --interview-content-width: 30rem;
 
   @media screen and (min-width: 768px) {
     // Font Sizes
@@ -36,6 +37,8 @@
 
     // Spaces and margin
     --border-margin: 6rem;
+    --interview-detail-width: 38rem;
+    --interview-content-width: 64rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -45,25 +48,31 @@
 
     // Spaces and margin
     --border-margin: 7rem;
+    --interview-detail-width: 34rem;
+    --interview-content-width: 56rem;
   }
 
   @media screen and (min-width: 1440px) {
     // Font Sizes
-    --font-size-text: 1.8rem;
+    --font-size-text: 1.6rem;
     --font-size-title: 5rem;
 
     --icon-size-action: 6.5rem;
 
     // Spaces and margin
     --border-margin: 8rem;
+    --interview-detail-width: 42rem;
+    --interview-content-width: 79rem;
   }
 
   @media screen and (min-width: 1920px) {
     // Font Sizes
-    --font-size-text: 2.2rem;
+    --font-size-text: 2rem;
     --font-size-title: 6.66rem;
 
     // Spaces and margin
     --border-margin: 9.254rem;
+    --interview-detail-width: 56rem;
+    --interview-content-width: 105rem;
   }
 }

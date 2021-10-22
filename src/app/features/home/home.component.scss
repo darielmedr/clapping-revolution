@@ -1,3 +1,13 @@
+header {
+  position: relative;
+
+  .top-bar {
+    position: absolute;
+    padding-top: var(--border-margin);
+    padding-left: var(--border-margin);
+  }
+}
+
 .home {
   position: relative;
   height: 100vh;
@@ -27,8 +37,6 @@
     margin-top: 3rem;
     pointer-events: all;
     z-index: 2;
-  }
-  .mat-icon {
     width: calc(var(--font-size-title) + 1rem);
     height: calc(var(--font-size-title) + 1rem);
     animation: bounceUpDown 2s linear infinite;
@@ -37,14 +45,13 @@
 
 .scroll-up {
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   margin-top: 5rem;
 
-  .mat-icon {
+  img.arrow-up {
     width: 3.5rem;
     height: 3.5rem;
-    transform: rotate(180deg);
   }
 }
 

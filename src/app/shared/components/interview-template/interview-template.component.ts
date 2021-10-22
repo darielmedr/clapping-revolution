@@ -1,11 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { InterviewContentType } from './../../models/interview-content-type.model';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { InterviewButtonsService } from 'src/app/features/interview/services/interview-buttons.service';
 
 @Component({
   selector: 'app-interview-template',
   templateUrl: './interview-template.component.html',
-  styleUrls: ['./interview-template.component.scss']
+  styleUrls: ['./interview-template.component.scss'],
 })
-export class InterviewTemplateComponent implements OnInit {
+export class InterviewTemplateComponent implements OnInit, OnDestroy {
 
   @Input()
   public audioId: string = '';
@@ -13,8 +16,20 @@ export class InterviewTemplateComponent implements OnInit {
   @Input()
   public videoId: string = '';
 
-  constructor() { }
+  public activeTab: number = 0;
+  private subscription: Subscription = new Subscription();
+
+  constructor(private interviewButtonsService: InterviewButtonsService) {}
 
   ngOnInit(): void {
+    this.subscription = this.interviewButtonsService
+      .getActiveContentType()
+      .subscribe((value: InterviewContentType) => {
+        this.activeTab = value as number;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

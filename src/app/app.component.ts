@@ -24,10 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private router: Router
     ) {
       this.matIconRegistry.addSvgIcon(
-        "arrowDown",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/utils/arrow-down.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
         "facebook",
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/facebook.svg")
       );

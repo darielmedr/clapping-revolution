@@ -1,3 +1,9 @@
+<header>
+  <mat-toolbar class="top-bar">
+    <app-logo></app-logo>
+  </mat-toolbar>
+</header>
+
 <section class="home" #homeRef>
   <app-canvas-balls></app-canvas-balls>
   <h1>
@@ -10,17 +16,12 @@
     a ra&iacute;z de los sucesos <br />
     del 27n
   </p>
-  <button
-    mat-icon-button
+  <img
     class="sroll-down-button"
     (click)="scrollTo(interviewedRef)"
-  >
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Scroll down"
-      svgIcon="arrowDown"
-    ></mat-icon>
-  </button>
+    src="./assets/images/icons/utils/arrow-down.png"
+    alt="arrow down button"
+  />
 </section>
 
 <section #interviewedRef>
@@ -32,13 +33,12 @@
 </section>
 
 <div class="scroll-up">
-  <button mat-icon-button (click)="scrollTo(homeRef)">
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Scroll up"
-      svgIcon="arrowDown"
-    ></mat-icon>
-  </button>
+  <img
+    class="arrow-up"
+    (click)="scrollTo(homeRef)"
+    src="./assets/images/icons/utils/arrow-down.png"
+    alt="arrow up button"
+  />
 </div>
 
 <app-footer></app-footer>

@@ -1,11 +1,10 @@
 <mat-toolbar>
   <app-logo></app-logo>
 
-  <button mat-icon-button *ngIf="showOpenBtn" (click)="openMenu()">
-    <mat-icon
-      aria-hidden="false"
-      aria-label="open menu"
-      svgIcon="arrowDown"
-    ></mat-icon>
-  </button>
+  <img
+    class="menu-btn"
+    (click)="openMenu()"
+    src="./assets/images/icons/utils/arrow-down.png"
+    alt="arrow left button"
+  />
 </mat-toolbar>
