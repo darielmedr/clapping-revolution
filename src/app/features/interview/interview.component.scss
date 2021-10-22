@@ -14,14 +14,13 @@ $sidenav-padding: 2rem;
       top: 0;
       left: -150%;
       max-width: var(--sidenav-width);
-      padding: $sidenav-padding;
-      padding-right: 0;
+      padding: calc(#{$sidenav-padding} / 2) 0 $sidenav-padding $sidenav-padding;
       border: none;
 
       .mat-toolbar-row {
         height: var(--sidenav-banner-height);
         line-height: 1;
-        margin: 1rem 0;
+        margin: 0.6rem 0;
       }
 
       .expand-icon {
@@ -33,9 +32,13 @@ $sidenav-padding: 2rem;
       .mat-expansion-panel {
         box-shadow: none;
 
+        .mat-nav-list {
+          padding-top: 0.4rem;
+        }
+
         .mat-list-item {
           height: fit-content;
-          padding: 0.4rem 0;
+          padding: 0.1rem 0;
           font-size: calc(var(--font-size-text) * 0.7);
           letter-spacing: 0;
 
