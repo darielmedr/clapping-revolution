@@ -24,14 +24,6 @@ $arrow-size: 3.2rem;
     width: $arrow-size;
     height: $arrow-size;
     border-radius: 50%;
-
-    &.prev {
-      transform: rotateZ(90deg);
-    }
-
-    &.next {
-      transform: rotateZ(-90deg);
-    }
   }
 }
 

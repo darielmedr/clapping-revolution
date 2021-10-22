@@ -1,12 +1,10 @@
 <div class="carousel-container">
-  <button mat-icon-button (click)="setPreviousSlide()">
-    <mat-icon
-      class="btn-arrow prev"
-      aria-hidden="false"
-      aria-label="Scroll down"
-      svgIcon="arrowDown"
-    ></mat-icon>
-  </button>
+  <img
+    class="btn-arrow arrow-left"
+    (click)="setPreviousSlide()"
+    src="./assets/images/icons/utils/arrow-down.png"
+    alt="arrow left button"
+  />
 
   <div class="carousel">
     <div #slidesRef class="slides" *ngIf="interviewees">
@@ -53,12 +51,10 @@
     </div>
   </div>
 
-  <button mat-icon-button (click)="setNextSlide()">
-    <mat-icon
-      class="btn-arrow next"
-      aria-hidden="false"
-      aria-label="Scroll down"
-      svgIcon="arrowDown"
-    ></mat-icon>
-  </button>
+  <img
+    class="btn-arrow arrow-rigth"
+    (click)="setNextSlide()"
+    src="./assets/images/icons/utils/arrow-down.png"
+    alt="arrow right button"
+  />
 </div>

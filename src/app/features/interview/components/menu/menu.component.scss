@@ -19,6 +19,7 @@ $rowTitleHeight: 6rem;
 
   .close-btn {
     padding: 0 calc(1.6rem + #{$sidenavPadding});
+    padding-top: var(--border-margin);
     height: $rowBtnHeight;
     justify-content: flex-end;
   }

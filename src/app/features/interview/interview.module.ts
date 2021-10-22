@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { InterviewRoutingModule } from './interview-routing.module';
 import { InterviewComponent } from './interview.component';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
@@ -29,6 +28,8 @@ import { Interviewee16Component } from './components/interviewees/interviewee16/
 import { Interviewee17Component } from './components/interviewees/interviewee17/interviewee17.component';
 import { Interviewee18Component } from './components/interviewees/interviewee18/interviewee18.component';
 import { ShareSocialNetworkComponent } from './components/share-social-network/share-social-network.component';
+import { InterviewButtonsComponent } from './components/interview-buttons/interview-buttons.component';
+import { InterviewButtonsService } from './services/interview-buttons.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ShareSocialNetworkComponent } from './components/share-social-network/s
     Interviewee17Component,
     Interviewee18Component,
     ShareSocialNetworkComponent,
+    InterviewButtonsComponent,
   ],
   imports: [
     CommonModule,

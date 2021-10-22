@@ -7,18 +7,20 @@ import { CoreModule } from '../core/core.module';
 import { YtPlayerComponent } from './components/yt-player/yt-player.component';
 import { InterviewTemplateComponent } from './components/interview-template/interview-template.component';
 import { SoundcloudAudioPlayerComponent } from './components/soundcloud-audio-player/soundcloud-audio-player.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 const commonElementes: any[] = [
   YtPlayerComponent,
   InterviewedCardComponent,
   FooterComponent,
   InterviewTemplateComponent,
+  SoundcloudAudioPlayerComponent,
+  LogoComponent,
 ];
 
 @NgModule({
   declarations: [
     ...commonElementes,
-    SoundcloudAudioPlayerComponent,
   ],
   imports: [
     CommonModule,

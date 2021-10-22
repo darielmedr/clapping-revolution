@@ -10,9 +10,6 @@ export class NavbarComponent implements OnInit {
   @Output('openMenu')
   private openMenuEmitter: EventEmitter<void> = new EventEmitter();
 
-  @Input()
-  public showOpenBtn: boolean | null = false;
-
   constructor() {}
 
   ngOnInit(): void {}

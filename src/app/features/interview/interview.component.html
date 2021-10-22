@@ -5,34 +5,25 @@
 ></app-menu>
 
 <div class="wrapper">
-  <app-navbar
-    (openMenu)="openMenu()"
-    [showOpenBtn]="isHandset$ | async"
-  ></app-navbar>
+  <app-navbar (openMenu)="openMenu()"></app-navbar>
 
-  <mat-drawer-container class="interview">
-    <mat-drawer
-      #drawerRef
-      class="interview-sidenav"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false"
-    >
+  <section class="interview">
+    <nav class="interview-sidenav">
       <mat-toolbar>
-        <mat-toolbar-row>
-          LA REVOLUCI&Oacute;N <br />
-          DE LOS APLAUSOS
+        <mat-toolbar-row class="banner">
+          <a [routerLink]="['/']">
+            LA REVOLUCI&Oacute;N <br />
+            DE LOS APLAUSOS
+          </a>
         </mat-toolbar-row>
         <mat-toolbar-row>
-          <button mat-icon-button (click)="expansionPanelRef.toggle()">
-            <mat-icon
-              class="expand-icon"
-              [ngClass]="{ 'arrow-up': expansionPanelRef.expanded }"
-              aria-hidden="false"
-              aria-label="toggle sidenav menu"
-              svgIcon="arrowDown"
-            ></mat-icon>
-          </button>
+          <img
+            class="expand-icon"
+            [ngClass]="{ 'arrow-up': expansionPanelRef.expanded }"
+            (click)="expansionPanelRef.toggle()"
+            src="./assets/images/icons/utils/arrow-down.png"
+            alt="arrow button"
+          />
         </mat-toolbar-row>
       </mat-toolbar>
 
@@ -50,18 +41,21 @@
           </mat-nav-list>
         </ng-template>
       </mat-expansion-panel>
-    </mat-drawer>
+    </nav>
 
-    <div
-      class="interview-content"
-      [ngClass]="{ 'centered': (isHandset$ | async) }"
-    >
+    <div class="interview-detail">
       <app-interviewed-detail></app-interviewed-detail>
-      <router-outlet></router-outlet>
-      <app-share-social-network></app-share-social-network>
-      <app-card-slider></app-card-slider>
+      <app-interview-buttons></app-interview-buttons>
     </div>
-  </mat-drawer-container>
+  </section>
+
+  <section class="content">
+    <div class="content__body">
+      <router-outlet></router-outlet>
+    </div>
+    <app-share-social-network></app-share-social-network>
+    <app-card-slider></app-card-slider>
+  </section>
 
   <app-footer [isDetailView]="true"></app-footer>
 </div>

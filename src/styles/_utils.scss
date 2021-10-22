@@ -2,12 +2,26 @@
   width: 100%;
 }
 
+.arrow-up {
+  transform: rotateZ(-180deg);
+}
+.arrow-left {
+  transform: rotateZ(90deg);
+}
+.arrow-rigth {
+  transform: rotateZ(-90deg);
+}
+
 .interview-text {
+  font-family: var(--font-family-text-regular);
+  font-weight: normal;
+
   article {
     color: var(--color-text-100);
 
     h4 {
       padding: 1.3rem 0;
+      font-weight: bold;
     }
   }
 
@@ -23,16 +37,16 @@
   }
 }
 
-@media screen and (min-width: 415px) {
+@media screen and (min-width: 550px) {
   .interview-text {
     p:first-child {
       display: block;
 
       .first-letter {
         float: left;
-        line-height: 0.8;
-        padding: 0 3rem 1.5rem 0;
+        padding: 0 3rem 0 0;
         margin: 0;
+        line-height: 1.2;
       }
     }
   }

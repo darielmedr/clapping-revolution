@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <button mat-button (click)="setTextActive()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Interview text icon"
+        [svgIcon]="isTextActive() ? 'paperOn' : 'paper'"
+      ></mat-icon>
+    </button>
+    <button mat-button (click)="setVideoActive()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Interview video icon"
+        [svgIcon]="isVideoActive() ? 'eyeOn' : 'eye'"
+      ></mat-icon>
+    </button>
+    <button mat-button (click)="setAudioActive()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Interview audio icon"
+        [svgIcon]="isAudioActive() ? 'earOn' : 'ear'"
+      ></mat-icon>
+    </button>
+  </div>

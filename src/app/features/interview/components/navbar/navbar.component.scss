@@ -4,11 +4,20 @@ $icon-size: 4rem;
 .mat-toolbar {
   padding: 0 calc(1.6rem + #{$sidenavPadding});
   justify-content: space-between;
-  height: calc(2 * #{$icon-size});
+  height: var(--top-navbar);
+  padding-top: var(--border-margin);
 
-  button,
-  .mat-icon {
+  .menu-btn {
+    transform: translateX(0);
     width: $icon-size;
     height: $icon-size;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mat-toolbar {
+    .menu-btn {
+      transform: translateY(-150rem);
+    }
   }
 }
