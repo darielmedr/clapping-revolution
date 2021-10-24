@@ -1,13 +1,11 @@
-$sidenav-padding: 2rem;
-
 .wrapper {
   position: relative;
 
   .interview {
     position: relative;
-    height: calc(100vh - var(--border-margin) - var(--top-navbar));
     display: flex;
     justify-content: center;
+    margin-bottom: var(--interview-margin-bottom);
 
     &-sidenav {
       position: absolute;
