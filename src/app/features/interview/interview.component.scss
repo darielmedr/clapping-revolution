@@ -5,22 +5,25 @@ $sidenav-padding: 2rem;
 
   .interview {
     position: relative;
-    height: calc(100vh - var(--top-navbar));
+    height: calc(100vh - var(--border-margin) - var(--top-navbar));
     display: flex;
     justify-content: center;
 
     &-sidenav {
       position: absolute;
-      top: 0;
+      top: var(--sidenav-margin-top);
       left: -150%;
       max-width: var(--sidenav-width);
-      padding: calc(#{$sidenav-padding} / 2) 0 $sidenav-padding $sidenav-padding;
       border: none;
 
       .mat-toolbar-row {
+        padding: 0;
         height: var(--sidenav-banner-height);
         line-height: 1;
-        margin: 0.6rem 0;
+
+        &:first-child {
+          margin-bottom: var(--sidenav-banner-gap);
+        }
       }
 
       .expand-icon {
@@ -33,13 +36,13 @@ $sidenav-padding: 2rem;
         box-shadow: none;
 
         .mat-nav-list {
-          padding-top: 0.4rem;
+          padding-top: var(--sidenav-banner-margin-bottom);
         }
 
         .mat-list-item {
           height: fit-content;
-          padding: 0.1rem 0;
-          font-size: calc(var(--font-size-text) * 0.7);
+          font-size: calc(var(--font-size-text) * 0.6);
+          padding: 0;
           letter-spacing: 0;
 
           &.active-interviewed {
@@ -54,7 +57,13 @@ $sidenav-padding: 2rem;
     &-detail {
       width: var(--interview-detail-width);
       height: 100%;
-      padding-top: calc(var(--sidenav-banner-height) + #{$sidenav-padding});
+      // padding-top: calc(
+      //   var(--sidenav-margin-top) + var(--sidenav-banner-height)
+      // );
+      padding-top: 11.3vh;
+      display: flex;
+      flex-direction: column;
+      gap: 3vh;
     }
   }
 
@@ -81,7 +90,11 @@ $sidenav-padding: 2rem;
   .wrapper {
     .interview {
       &-sidenav {
-        left: 0;
+        left: var(--border-margin);
+      }
+
+      &-detail {
+        gap: 7.7vh;
       }
     }
 
@@ -90,7 +103,21 @@ $sidenav-padding: 2rem;
       padding: 0;
 
       &__body {
-        padding: 0 3.2rem;
+        padding: 0 4.95vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    .interview {
+      &-sidenav {
+        .mat-expansion-panel {
+          .mat-list-item {
+            padding: calc(var(--font-size-text) * 0.2) 0;
+          }
+        }
       }
     }
   }

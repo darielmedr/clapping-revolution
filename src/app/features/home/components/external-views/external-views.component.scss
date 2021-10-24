@@ -6,7 +6,7 @@ $icon-size: 7rem;
   justify-content: center;
   align-items: center;
   gap: 4.4rem;
-  padding: 0 calc(2 * var(--border-margin));
+  padding: 0 calc(1.35 * var(--border-margin));
   margin: 2rem 0;
 
   a {
@@ -39,8 +39,8 @@ $icon-size: 7rem;
   .wrapper {
     gap: 6rem;
 
-    p {
-      font-size: 1rem;
+    a .info p {
+      font-size: 0.9rem;
     }
   }
 }
@@ -49,8 +49,8 @@ $icon-size: 7rem;
   .wrapper {
     gap: 9rem;
 
-    p {
-      font-size: 1.2rem;
+    a .info p {
+      font-size: 1rem;
     }
   }
 }

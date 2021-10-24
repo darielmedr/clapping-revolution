@@ -1,7 +1,7 @@
 footer {
   position: relative;
   padding: var(--border-margin);
-  margin-top: 3rem;
+  margin-top:  var(--footer-top-margin);
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -9,7 +9,7 @@ footer {
 
   .logo {
     position: absolute;
-    transform: translateX(-5000rem);
+    transform: translateX(-500rem);
   }
 
   .site-info {
@@ -34,13 +34,8 @@ footer {
   }
 }
 
-.detail-view-margin {
-  padding: 3.6rem;
-}
-
 @media screen and (min-width: 535px) {
   footer {
-    margin-top: 6rem;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;

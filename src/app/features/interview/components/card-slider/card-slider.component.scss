@@ -1,9 +1,6 @@
-$arrow-size: 3.2rem;
-
 .carousel-container {
   display: flex;
-  width: 110%;            // arrow buttons outside main margin
-  margin-left: -5%;       // center carousel
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
 
@@ -20,9 +17,9 @@ $arrow-size: 3.2rem;
     }
   }
   .btn-arrow {
-    font-size: $arrow-size;
-    width: $arrow-size;
-    height: $arrow-size;
+    font-size: var(--icon-size-slider);
+    width: var(--icon-size-slider);
+    height: var(--icon-size-slider);
     border-radius: 50%;
   }
 }

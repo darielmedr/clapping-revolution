@@ -89,7 +89,8 @@ ul {
   background-color: transparent;
 }
 
-.mat-expansion-panel-body {
+.mat-expansion-panel-body,
+.mat-list-item .mat-list-item-content {
   padding: 0 !important;
 }
 
@@ -102,4 +103,8 @@ ul {
 .mat-tab-nav-bar,
 .mat-tab-header {
   border: none;
+}
+
+.mat-tab-header {
+  display: none !important;
 }
