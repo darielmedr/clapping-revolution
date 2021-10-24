@@ -18,38 +18,58 @@
   --font-size-text: 1.1rem;
   --font-size-title: 2.4rem;
 
-  --icon-size-action: 3.5rem;
+  // Static size
+  --icon-size-menu: 4rem;
+  --sidenav-width: 35rem;
 
   // Spaces and margin
-  --border-margin: 4rem;
-  --top-navbar: 7rem;
-  --sidenav-width: 35rem;
-  --sidenav-banner-height: 3.4rem;
-  --interview-detail-width: 30rem;
-  --interview-content-width: 30rem;
+  --border-margin: 3.3rem;
+  --top-navbar: 3rem;
+  --sidenav-margin-top: 3.5rem;
+  --sidenav-banner-height: 3.5rem;
+  --interview-detail-width: 27rem;
+  --icon-size-action: 4rem;
+  --icon-size-social-link: 3.4rem;
+  --icon-size-slider: 2.5rem;
+  --interview-content-width: 31.3rem;
+  --footer-top-margin: 2rem;
 
   @media screen and (min-width: 768px) {
     // Font Sizes
     --font-size-text: 1.19rem;
     --font-size-title: 2.8rem;
 
-    --icon-size-action: 5rem;
-
     // Spaces and margin
-    --border-margin: 6rem;
-    --interview-detail-width: 38rem;
+    --border-margin: 3.8rem;
+    --top-navbar: 3.3rem;
+    --sidenav-margin-top: 8rem;
+    --sidenav-banner-height: 8rem;
+    --interview-detail-width: 30rem;
+    --icon-size-action: 3.5rem;
+    --icon-size-social-link: 4rem;
+    --icon-size-slider: 3rem;
     --interview-content-width: 64rem;
+    --footer-top-margin: 2rem;
   }
 
   @media screen and (min-width: 1024px) {
     // Font Sizes
-    --font-size-text: 1.38rem;
+    --font-size-text: 1.2rem;
     --font-size-title: 3.5rem;
 
     // Spaces and margin
-    --border-margin: 7rem;
-    --interview-detail-width: 34rem;
-    --interview-content-width: 56rem;
+    --border-margin: 4.9rem;
+    --top-navbar: 2.3rem;
+    --sidenav-margin-top: 3.4rem;
+    --sidenav-banner-height: 2.2rem;
+    --sidenav-banner-gap: 2.6rem;
+    --sidenav-banner-margin-bottom: 0.6rem;
+    --interview-detail-width: 23.1rem;
+    --icon-size-action: 3.5rem;
+    --icon-size-social-link: 2.7rem;
+    --icon-size-slider: 4rem;
+    --interview-content-width: 56.1rem;
+    --footer-top-margin: 4.1rem;
   }
 
   @media screen and (min-width: 1440px) {
@@ -57,12 +77,19 @@
     --font-size-text: 1.6rem;
     --font-size-title: 5rem;
 
-    --icon-size-action: 6.5rem;
-
     // Spaces and margin
-    --border-margin: 8rem;
-    --interview-detail-width: 42rem;
-    --interview-content-width: 79rem;
+    --border-margin: 7rem;
+    --top-navbar: 3rem;
+    --sidenav-margin-top: 4.5rem;
+    --sidenav-banner-height: 3.5rem;
+    --sidenav-banner-gap: 3.2rem;
+    --sidenav-banner-margin-bottom: 0.6rem;
+    --interview-detail-width: 32.5rem;
+    --icon-size-action: 4.9rem;
+    --icon-size-social-link: 3.7rem;
+    --icon-size-slider: 5.7rem;
+    --interview-content-width: 78.9rem;
+    --footer-top-margin: 7.5rem;
   }
 
   @media screen and (min-width: 1920px) {
@@ -71,8 +98,17 @@
     --font-size-title: 6.66rem;
 
     // Spaces and margin
-    --border-margin: 9.254rem;
-    --interview-detail-width: 56rem;
+    --border-margin: 9.2rem;
+    --top-navbar: 4.3rem;
+    --sidenav-margin-top: 6rem;
+    --sidenav-banner-height: 5.3rem;
+    --sidenav-banner-gap: 2.9rem;
+    --sidenav-banner-margin-bottom: 0.6rem;
+    --interview-detail-width: 45rem;
+    --icon-size-action: 6.5rem;
+    --icon-size-social-link: 4.9rem;
+    --icon-size-slider: 7.5rem;
     --interview-content-width: 105rem;
+    --footer-top-margin: 12.5rem;
   }
 }

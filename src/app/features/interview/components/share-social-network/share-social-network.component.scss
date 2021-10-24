@@ -1,18 +1,17 @@
 .share-social-wrapper {
   display: flex;
   justify-content: center;
-  margin: 3rem 0;
+  gap: calc(var(--icon-size-social-link) * 0.25);
+  margin: 4.1vw 0 9.1vw 0;
 
-  a .icon-link {
-    height: 3rem;
-    width: 3rem;
-    font-size: 3rem;
-  }
-}
+  a {
+    height: var(--icon-size-social-link);
+    width: var(--icon-size-social-link);
 
-@media screen and (min-width: 998px) {
-  .share-social-wrapper {
-    gap: 0.5rem;
-    margin: 4rem 0 7rem 0;
+    .icon-link {
+      height: 100%;
+      width: 100%;
+      font-size: var(--icon-size-social-link);
+    }
   }
 }

@@ -17,10 +17,16 @@ $rowTitleHeight: 6rem;
     @extend .bg-accent;
   }
 
+  .mat-toolbar-row {
+    height: var(--top-navbar);
+    padding: 0;
+  }
+
   .close-btn {
-    padding: 0 calc(1.6rem + #{$sidenavPadding});
-    padding-top: var(--border-margin);
-    height: $rowBtnHeight;
+    margin-top: var(--border-margin);
+    padding-right: var(--border-margin);
+    // padding-top: var(--border-margin);
+    height: var(--top-navbar);
     justify-content: flex-end;
   }
 
@@ -47,7 +53,7 @@ $rowTitleHeight: 6rem;
     align-items: center;
     gap: 1rem;
     padding: 3rem 0;
-    font-size: var(--font-size-text);
+    font-size: calc(var(--font-size-text) * 0.9);
     animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
     li:first-child {

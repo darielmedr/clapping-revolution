@@ -1,16 +1,14 @@
-$sidenavPadding: 2rem;
-$icon-size: 4rem;
-
 .navbar {
-  padding: 0 calc(1.6rem + #{$sidenavPadding});
+  margin-top: var(--border-margin);
+  padding: 0 var(--border-margin);
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   height: var(--top-navbar);
 
   .menu-btn {
     transform: translateX(0);
-    width: $icon-size;
-    height: $icon-size;
+    width: var(--icon-size-menu);
+    height: var(--icon-size-menu);
   }
 }
 

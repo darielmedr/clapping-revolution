@@ -2,8 +2,9 @@
   overflow: hidden;
 
   img {
-    width: 100px;
-    height: auto;
+    height: var(--top-navbar);
+    max-width: 14.5rem;
+    width: auto;
     animation: appearRight 1s ease-in-out forwards;
   }
 }
@@ -14,30 +15,5 @@
   }
   to {
     transform: translateX(0);
-  }
-}
-
-
-@media screen and (min-width: 1024px) {
-  .logo-container {
-    img {
-      max-width: 15rem;
-    }
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .logo-container {
-    img {
-      max-width: 20rem;
-    }
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  .logo-container {
-    img {
-      max-width: 25rem;
-    }
   }
 }
