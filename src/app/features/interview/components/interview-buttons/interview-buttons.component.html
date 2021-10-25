@@ -1,23 +1,35 @@
 <div class="wrapper">
-    <button mat-button (click)="setTextActive()">
-      <mat-icon
-        aria-hidden="false"
-        aria-label="Interview text icon"
-        [svgIcon]="isTextActive() ? 'paperOn' : 'paper'"
-      ></mat-icon>
-    </button>
-    <button mat-button (click)="setVideoActive()">
-      <mat-icon
-        aria-hidden="false"
-        aria-label="Interview video icon"
-        [svgIcon]="isVideoActive() ? 'eyeOn' : 'eye'"
-      ></mat-icon>
-    </button>
-    <button mat-button (click)="setAudioActive()">
-      <mat-icon
-        aria-hidden="false"
-        aria-label="Interview audio icon"
-        [svgIcon]="isAudioActive() ? 'earOn' : 'ear'"
-      ></mat-icon>
-    </button>
-  </div>
+  <button mat-button (click)="setTextActive()">
+    <img
+      class="icon"
+      [src]="
+        isTextActive()
+          ? './assets/images/icons/media/texto-on.svg'
+          : './assets/images/icons/media/texto-off.svg'
+      "
+      alt="Interview text icon"
+    />
+  </button>
+  <button mat-button (click)="setVideoActive()">
+    <img
+      class="icon"
+      [src]="
+      isVideoActive()
+          ? './assets/images/icons/media/video-on.svg'
+          : './assets/images/icons/media/video-off.svg'
+      "
+      alt="Interview video icon"
+    />
+  </button>
+  <button mat-button (click)="setAudioActive()">
+    <img
+      class="icon"
+      [src]="
+      isAudioActive()
+          ? './assets/images/icons/media/audio-on.svg'
+          : './assets/images/icons/media/audio-off.svg'
+      "
+      alt="Interview audio icon"
+    />
+  </button>
+</div>

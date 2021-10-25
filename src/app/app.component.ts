@@ -48,34 +48,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/cloud.svg")
       );
       this.matIconRegistry.addSvgIcon(
-        "close",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/utils/close.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "paper",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/texto-off.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "eye",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/video-off.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "ear",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/audio-off.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "paperOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/texto-on.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "eyeOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/video-on.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "earOn",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/media/audio-on.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
         "facebookDark",
         this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/facebook-dark.svg")
       );

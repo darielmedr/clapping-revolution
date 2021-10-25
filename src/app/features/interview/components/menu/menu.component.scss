@@ -3,7 +3,7 @@ $rowBtnHeight: 2 * $iconSize;
 $rowTitleHeight: 6rem;
 
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,21 +17,25 @@ $rowTitleHeight: 6rem;
   }
 
   .mat-toolbar-row {
-    height: var(--top-navbar);
     padding: 0;
+    height: var(--top-navbar);
   }
 
   .close-btn {
     margin-top: var(--border-margin);
     padding-right: var(--border-margin);
-    height: var(--top-navbar);
     justify-content: flex-end;
-  }
 
-  .mat-icon {
-    transition: transform 0.5s ease-in-out;
-    width: var(--icon-size-menu);
-    height: var(--icon-size-menu);
+    button {
+      width: var(--icon-size-menu);
+      height: var(--icon-size-menu);
+      transition: transform 0.5s ease-in-out;
+
+      .icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   .title {
