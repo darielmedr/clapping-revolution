@@ -26,13 +26,13 @@
   }
 
   p:first-child {
-    display: flex;
-    flex-direction: column;
-
     .first-letter {
       font-size: 10em;
+      height: 0.9em;
       font-weight: bold;
-      margin: 0 auto;
+      float: left;
+      padding-right: 1.5rem;
+      line-height: 1.2;
     }
   }
 }
@@ -40,13 +40,9 @@
 @media screen and (min-width: 550px) {
   .interview-text {
     p:first-child {
-      display: block;
-
       .first-letter {
         float: left;
-        padding: 0 3rem 0 0;
-        margin: 0;
-        line-height: 1.2;
+        padding-right: 3rem;
       }
     }
   }
