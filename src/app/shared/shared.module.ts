@@ -8,6 +8,7 @@ import { YtPlayerComponent } from './components/yt-player/yt-player.component';
 import { InterviewTemplateComponent } from './components/interview-template/interview-template.component';
 import { SoundcloudAudioPlayerComponent } from './components/soundcloud-audio-player/soundcloud-audio-player.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { ScrollUpButtonComponent } from './components/scroll-up-button/scroll-up-button.component';
 
 const commonElementes: any[] = [
   YtPlayerComponent,
@@ -16,6 +17,7 @@ const commonElementes: any[] = [
   InterviewTemplateComponent,
   SoundcloudAudioPlayerComponent,
   LogoComponent,
+  ScrollUpButtonComponent,
 ];
 
 @NgModule({

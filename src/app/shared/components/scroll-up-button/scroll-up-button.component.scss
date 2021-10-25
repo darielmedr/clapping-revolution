@@ -1,0 +1,11 @@
+.scroll-up {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+
+  img.arrow-up {
+    width: var(--icon-size-action);
+    height: var(--icon-size-action);
+  }
+}
