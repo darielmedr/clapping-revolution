@@ -43,18 +43,6 @@ header {
   }
 }
 
-.scroll-up {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-
-  img.arrow-up {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-}
-
 @keyframes bounceUpDown {
   0%,
   100% {
