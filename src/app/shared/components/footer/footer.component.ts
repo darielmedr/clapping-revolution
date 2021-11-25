@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   public links: { icon: string, url: string }[] = [
-    { icon: 'twitter', url: '' },
-    { icon: 'facebook', url: '' },
-    { icon: 'instagram', url: '' },
+    { icon: 'twitter', url: 'https://twitter.com/periodibarrio' },
+    { icon: 'facebook', url: 'https://www.facebook.com/periodismodebarrio' },
+    { icon: 'instagram', url: 'https://www.instagram.com/periodismodebarrio/' },
     { icon: 'telegram', url: '' },
-    { icon: 'youtube', url: '' },
-    { icon: 'cloud', url: '' },
+    { icon: 'youtube', url: 'https://www.youtube.com/c/PeriodismodeBarrio' },
+    { icon: 'cloud', url: 'https://soundcloud.com/periodismo-de-barrio' },
   ];
 
   constructor() {}
