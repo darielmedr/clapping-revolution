@@ -1,4 +1,4 @@
-import { Observable, Subject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { InterviewContentType } from 'src/app/shared/models/interview-content-type.model';
 
@@ -7,7 +7,7 @@ import { InterviewContentType } from 'src/app/shared/models/interview-content-ty
 })
 export class InterviewButtonsService {
 
-  private activeContentType: Subject<InterviewContentType> = new Subject();
+  private activeContentType: ReplaySubject<InterviewContentType> = new ReplaySubject(1);
 
   constructor() { }
 

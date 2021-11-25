@@ -13,8 +13,8 @@ $icon-size: 7rem;
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    width: 23.8rem;
-    height: 11.4rem;
+    width: 22rem;
+    height: 10rem;
     border-radius: 6rem;
     border: solid 2px var(--color-text-400);
     padding: 1.6rem;
@@ -23,25 +23,12 @@ $icon-size: 7rem;
       width: auto;
       height: $icon-size;
     }
-
-    .info {
-      width: max-content;
-
-      p {
-        padding: 0;
-        font-size: 0.8rem;
-      }
-    }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .wrapper {
     gap: 6rem;
-
-    a .info p {
-      font-size: 0.9rem;
-    }
   }
 }
 
@@ -50,7 +37,7 @@ $icon-size: 7rem;
     gap: 9rem;
 
     a .info p {
-      font-size: 1rem;
+      font-size: 1.55rem;
     }
   }
 }
