@@ -4,7 +4,7 @@
 * Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48I2NjMzNjYSIsIj9lcjwjZjBjMmVmIiwiO2VyPCNiOTIwYjd$LCIlPmBePCM3OTc5NzkiLCI~ZXI8I2Q3ZDdkNyIsIjtlcjwjNWM1YzVjfiwid2Fybj5gXjwjZmYwMDAwIiwiP2VyPCNmZmIzYjMiLCI7ZXI8I2ZmMDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTMiLCJmYW1pbHk8U2Fuc2l0YSBTd2FzaGVkfixgQDwoLTJ$LGBAPCgtMX4sYEA8aGVhZGxpbmV$LGBAPHRpdGxlfixgQDxzdWIpLTJ$LGBAPHN1YiktMX4sYEA8Ym9keS0yfixgQDxib2R5LTF$LGBAPGJ1dHRvbn4sYEA8Y2FwdGlvbn4sYEA8aW5wdXQiLCJzaXplPm51bGx9XSwiaWNvbnM8RmlsbGVkIiwiP25lc3M$dHJ1ZSwidmVyc2lvbj4xMn0=
 */
 
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
