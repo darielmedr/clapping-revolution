@@ -1,6 +1,6 @@
 # Revolucion de los Aplausos
 
-Article for [Periodismo de Barrio]('https://www.periodismodebarrio.org/').
+Article for [Periodismo de Barrio](https://www.periodismodebarrio.org/).
 
 ## Table of contents
 
