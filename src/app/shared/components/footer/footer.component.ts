@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
     { icon: 'twitter', url: 'https://twitter.com/periodibarrio' },
     { icon: 'facebook', url: 'https://www.facebook.com/periodismodebarrio' },
     { icon: 'instagram', url: 'https://www.instagram.com/periodismodebarrio/' },
-    { icon: 'telegram', url: '' },
+    { icon: 'telegram', url: 'https://t.me/periodismodebarrio' },
     { icon: 'youtube', url: 'https://www.youtube.com/c/PeriodismodeBarrio' },
     { icon: 'cloud', url: 'https://soundcloud.com/periodismo-de-barrio' },
   ];
