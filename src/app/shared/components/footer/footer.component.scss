@@ -1,7 +1,7 @@
 footer {
   position: relative;
   padding: var(--border-margin);
-  margin-top:  var(--footer-top-margin);
+  margin-top: var(--footer-top-margin);
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -39,6 +39,10 @@ footer {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
+
+    .site-info {
+      max-width: 60%;
+    }
   }
 }
 
