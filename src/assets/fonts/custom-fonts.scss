@@ -1,9 +1,11 @@
 @font-face {
     font-family: "AkzidenzGrotesk";
     src: local("AkzidenzGrotesk"), url(AkzidenzGrotesk-Extended.otf) format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "text-regular";
     src: local("text-regular"), url(HelveticaNeueLTStd-Roman.otf) format("opentype");
+    font-display: swap;
 }
