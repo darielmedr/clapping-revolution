@@ -9,6 +9,7 @@ import { InterviewTemplateComponent } from './components/interview-template/inte
 import { SoundcloudAudioPlayerComponent } from './components/soundcloud-audio-player/soundcloud-audio-player.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ScrollUpButtonComponent } from './components/scroll-up-button/scroll-up-button.component';
+import { LazyImgDirective } from './directives/lazy-img.directive';
 
 const commonElementes: any[] = [
   YtPlayerComponent,
@@ -18,6 +19,7 @@ const commonElementes: any[] = [
   SoundcloudAudioPlayerComponent,
   LogoComponent,
   ScrollUpButtonComponent,
+  LazyImgDirective,
 ];
 
 @NgModule({
