@@ -23,13 +23,13 @@ $border-space: 2.5rem;
     font-weight: var(--font-weight-medium);
 
     p {
-      font-size: calc(var(--font-size-text) * 0.75);
+      font-size: var(--font-size-text);
       padding-top: 0.6rem;
     }
   }
 
   .mat-card-title {
-    font-size: calc(var(--font-size-text) * 0.85);
+    font-size: calc(var(--font-size-text) * 1.05);
   }
 }
 
@@ -48,5 +48,5 @@ $border-space: 2.5rem;
 }
 
 .is-subtitle-detail {
-  font-size: calc(var(--font-size-text) * 0.95) !important;
+  font-size: calc(var(--font-size-text) * 0.9) !important;
 }

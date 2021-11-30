@@ -29,7 +29,7 @@ header {
 
   p {
     pointer-events: none;
-    font-size: calc(0.36 * var(--font-size-title));
+    font-size: calc(0.45 * var(--font-size-title));
     z-index: 2;
   }
 
@@ -53,10 +53,14 @@ header {
   }
 }
 
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .home {
     .sroll-down-button {
       pointer-events: none;
+    }
+
+    p {
+      font-size: calc(0.36 * var(--font-size-title));
     }
   }
 }
