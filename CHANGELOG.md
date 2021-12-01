@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.0.1...v1.1.0) (2021-12-01)
+
+
+### Features
+
+* add meta description, swap to default font while is still loading, add nginx webp to cache ([a08154c](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/a08154c79f70f3eb2e7dc05971355e6067dcdc6f))
+* adjust font size for mobile view to improve seo ([cac2bfc](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/cac2bfc474408b09012a8daeea063bee4da07f1c))
+* **external-views.component:** create lazy-image.directive to lazy load images ([93bce76](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/93bce76b1000e7955a38f3f155a54eb33154d742))
+* **footer.component:** add url for telegram link ([5421eed](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/5421eed238b1c3af9dede9a0b09f5e380ec7bdfe))
+* **home:** update footer license and fix external view text for facebook live ([0288380](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/0288380353ebdb2adac5c672448d74e5eee78610))
+* **interviewee.service.ts:** add quotes ([16b4126](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/16b41260398b27d0fa243dec43c16c4c5f9a5677))
+
 ### 1.0.1 (2021-11-28)
 
 
