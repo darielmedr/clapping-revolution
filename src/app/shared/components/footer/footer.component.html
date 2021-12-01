@@ -6,7 +6,7 @@
   </div>
 
   <div class="social-links">
-    <a [href]="link.url" mat-icon-button *ngFor="let link of links">
+    <a [href]="link.url" [attr.aria-label]="link.icon" mat-icon-button *ngFor="let link of links">
       <mat-icon
         aria-hidden="false"
         [svgIcon]="link.icon"
