@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { share } from 'rxjs/operators';
 import Interviewee from 'src/app/shared/models/interviewee.model';
 import { IntervieweeService } from 'src/app/core/services/interviewee.service';
 
@@ -15,12 +14,10 @@ export class InterviewComponent implements OnInit {
 
   public isMenuOpened: boolean = false;
 
-  constructor(private intervieweeService: IntervieweeService) {}
+  constructor(private intervieweeService: IntervieweeService,) {}
 
   ngOnInit(): void {
-    this.interviewees$ = this.intervieweeService
-      .getInterviewees()
-      .pipe(share());
+    this.interviewees$ = this.intervieweeService.getInterviewees();
   }
 
   public openMenu(): void {

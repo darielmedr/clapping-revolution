@@ -8,8 +8,6 @@ import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { InterviewedGridComponent } from './components/interviewed-grid/interviewed-grid.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ExternalViewsComponent } from './components/external-views/external-views.component';
-import { CoreModule } from 'src/app/core/core.module';
-
 
 @NgModule({
   declarations: [

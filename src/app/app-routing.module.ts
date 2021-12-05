@@ -25,8 +25,9 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules,
-    scrollPositionRestoration: 'top'
-  })],
+    scrollPositionRestoration: 'top',
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

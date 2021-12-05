@@ -1,6 +1,6 @@
 # Step 1: Build
 
-FROM node:lts-alpine3.12 as build-step
+FROM node:14.18-alpine3.12 as build-step
 
 RUN mkdir -p /app
 
@@ -12,18 +12,24 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build:prod
+RUN npm run prerender
 
 # Stage 2: Serving
 
-FROM nginx:1.21.4-alpine
+FROM node:14.18-alpine3.12
 
-COPY nginx.conf /etc/nginx/nginx.conf
+RUN mkdir -p /app
 
-COPY /resources/* /usr/share/nginx/resources/
-
-WORKDIR /usr/share/nginx/html
-
-RUN rm -rf ./*
+WORKDIR /app
 
 COPY --from=build-step /app/dist/revolucion-de-los-aplausos .
+
+RUN npm install pm2 -g
+
+ENV DIST="/app/browser"
+
+ENV PORT=80
+
+EXPOSE 80
+
+CMD [ "pm2-runtime", "./server/main.js" ]

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,9 +7,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class WindowService {
 
-  private screenWidth$: BehaviorSubject<number> = new BehaviorSubject(document.body.clientWidth);
+  private screenWidth$: BehaviorSubject<number>;
 
-  constructor() { }
+  constructor(
+    @Inject(DOCUMENT) public document: Document,
+  ) {
+    this.screenWidth$ = new BehaviorSubject(document.body.clientWidth)
+  }
 
   public updateScreenWidth(width: number): void {
     this.screenWidth$.next(width);

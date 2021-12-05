@@ -10,7 +10,8 @@ import Interviewee from 'src/app/shared/models/interviewee.model';
 })
 export class InterviewedDetailComponent implements OnInit, OnDestroy {
 
-  public interviewed$: Observable<Interviewee> = new Observable();
+
+  public interviewee$: Observable<Interviewee> = new Observable();
 
   private unsubscribe$: Subject<void> = new Subject();
 
@@ -26,6 +27,6 @@ export class InterviewedDetailComponent implements OnInit, OnDestroy {
   }
 
   private setCurrentInterviewedById(): void {
-    this.interviewed$ = this.intervieweeService.getCurrentInterviewee();
+    this.interviewee$ = this.intervieweeService.getCurrentInterviewee();
   }
 }

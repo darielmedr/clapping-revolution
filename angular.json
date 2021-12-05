@@ -20,14 +20,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/revolucion-de-los-aplausos",
+            "outputPath": "dist/revolucion-de-los-aplausos/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {"glob": "robots.txt", "input": "seo", "output": "/"},
+              {"glob": "sitemap.xml", "input": "seo", "output": "/"}
             ],
             "styles": [
               "src/styles.scss",
@@ -118,6 +120,65 @@
               "devServerTarget": "revolucion-de-los-aplausos:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/revolucion-de-los-aplausos/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "optimization": false,
+            "sourceMap": true,
+            "extractLicenses": false
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "revolucion-de-los-aplausos:build:development",
+              "serverTarget": "revolucion-de-los-aplausos:server:development"
+            },
+            "production": {
+              "browserTarget": "revolucion-de-los-aplausos:build:production",
+              "serverTarget": "revolucion-de-los-aplausos:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "revolucion-de-los-aplausos:build:production",
+              "serverTarget": "revolucion-de-los-aplausos:server:production"
+            },
+            "development": {
+              "browserTarget": "revolucion-de-los-aplausos:build:development",
+              "serverTarget": "revolucion-de-los-aplausos:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

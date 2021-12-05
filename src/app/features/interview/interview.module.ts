@@ -29,7 +29,6 @@ import { Interviewee17Component } from './components/interviewees/interviewee17/
 import { Interviewee18Component } from './components/interviewees/interviewee18/interviewee18.component';
 import { ShareSocialNetworkComponent } from './components/share-social-network/share-social-network.component';
 import { InterviewButtonsComponent } from './components/interview-buttons/interview-buttons.component';
-import { InterviewButtonsService } from './services/interview-buttons.service';
 
 @NgModule({
   declarations: [

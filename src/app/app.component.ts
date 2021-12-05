@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
@@ -17,53 +24,77 @@ export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
+    @Inject(DOCUMENT) public document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private windowService: WindowService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private intervieweeService: IntervieweeService,
     private router: Router
-    ) {
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
       this.matIconRegistry.addSvgIcon(
-        "facebook",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/facebook.svg")
+        'facebook',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/facebook.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "instagram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/instagram.svg")
+        'instagram',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/instagram.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "telegram",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/telegram.svg")
+        'telegram',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/telegram.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "twitter",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/twitter.svg")
+        'twitter',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/twitter.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "youtube",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/youtube.svg")
+        'youtube',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/youtube.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "cloud",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/cloud.svg")
+        'cloud',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/cloud.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "facebookDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/facebook-dark.svg")
+        'facebookDark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/dark/facebook-dark.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "twitterDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/twitter-dark.svg")
+        'twitterDark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/dark/twitter-dark.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "telegramDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/telegram-dark.svg")
+        'telegramDark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/dark/telegram-dark.svg'
+        )
       );
       this.matIconRegistry.addSvgIcon(
-        "whatsappDark",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/icons/social/dark/whatsapp-dark.svg")
+        'whatsappDark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          './assets/images/icons/social/dark/whatsapp-dark.svg'
+        )
       );
     }
+  }
 
   ngOnInit(): void {
     this.detectWindowResize();
@@ -76,11 +107,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private detectWindowResize(): void {
-    fromEvent(window, 'resize')
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(() => {
-        this.windowService.updateScreenWidth(document.body.clientWidth);
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      fromEvent(window, 'resize')
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe(() => {
+          this.windowService.updateScreenWidth(document.body.clientWidth);
+        });
+    }
   }
 
   private listenOnRouteChange(): void {
@@ -92,7 +125,9 @@ export class AppComponent implements OnInit, OnDestroy {
         )
       )
       .subscribe((event: NavigationEnd) => {
-        const id: number | undefined = this.extractIdOfRoute(event.urlAfterRedirects);
+        const id: number | undefined = this.extractIdOfRoute(
+          event.urlAfterRedirects
+        );
 
         if (id) {
           this.setIntervieweeById(id);
@@ -100,7 +135,6 @@ export class AppComponent implements OnInit, OnDestroy {
       });
   }
   private extractIdOfRoute(routePath: string): number | undefined {
-
     const pathSegments: string[] = routePath.split('/');
 
     const interviewPath: string = pathSegments[pathSegments.length - 2];
