@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.1.0...v1.2.0) (2021-12-05)
+
+
+### Features
+
+* add ssr with angular universal ([a97c427](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/a97c42751b1c245c54fd98d834697df75f51a1e7))
+
 ## [1.1.0](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.0.1...v1.1.0) (2021-12-01)
 
 
