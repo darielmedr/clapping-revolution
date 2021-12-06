@@ -29,7 +29,8 @@
               "src/favicon.ico",
               "src/assets",
               {"glob": "robots.txt", "input": "seo", "output": "/"},
-              {"glob": "sitemap.xml", "input": "seo", "output": "/"}
+              {"glob": "sitemap.xml", "input": "seo", "output": "/"},
+              {"glob": "google8c12349b757d5da3.html", "input": "seo", "output": "/"}
             ],
             "styles": [
               "src/styles.scss",
