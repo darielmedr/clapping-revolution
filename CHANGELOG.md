@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.2.0...v1.2.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* **index.html:** fix path to share image ([c406ef4](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/c406ef43f6146130bfb2faca56f4f30033c65a30))
+
 ## [1.2.0](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.1.0...v1.2.0) (2021-12-05)
 
 
