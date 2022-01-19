@@ -46,6 +46,7 @@ npm install
 - Mobile-first workflow
 - [Angular](https://angular.io/) - Angular framework
 - [Angular Material Design](https://material.angular.io/) - Material Design components for Angular
+- [Angular Universal](https://angular.io/guide/universal) - Renders Angular applications on the server.
 
 ## Usage
 
