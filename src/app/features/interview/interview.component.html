@@ -33,7 +33,7 @@
             <a
               mat-list-item
               *ngFor="let interviewed of interviewees$ | async"
-              [routerLink]="['/interview', interviewed.id]"
+              [routerLink]="['/entrevista', interviewed.path]"
               routerLinkActive="active-interviewed"
             >
               {{ interviewed.name | uppercase }}

@@ -125,30 +125,27 @@ export class AppComponent implements OnInit, OnDestroy {
         )
       )
       .subscribe((event: NavigationEnd) => {
-        const id: number | undefined = this.extractIdOfRoute(
+        const path: string | undefined = this.extractPathValueFromRoute(
           event.urlAfterRedirects
         );
 
-        if (id) {
-          this.setIntervieweeById(id);
+        if (path) {
+          this.setIntervieweeByPath(path);
         }
       });
   }
-  private extractIdOfRoute(routePath: string): number | undefined {
+  private extractPathValueFromRoute(routePath: string): string | undefined {
     const pathSegments: string[] = routePath.split('/');
 
     const interviewPath: string = pathSegments[pathSegments.length - 2];
 
-    if (interviewPath !== 'interview') {
+    if (interviewPath !== 'entrevista') {
       return undefined;
     }
 
-    const idString: string = pathSegments[pathSegments.length - 1];
-    const id: number = Number(idString);
-
-    return id === NaN ? undefined : id;
+    return pathSegments[pathSegments.length - 1];
   }
-  public setIntervieweeById(id: number): void {
-    this.intervieweeService.setIntervieweeById(id);
+  private setIntervieweeByPath(path: string): void {
+    this.intervieweeService.setIntervieweeByPath(path);
   }
 }

@@ -17,7 +17,7 @@
       >
         <div #slideRef class="slide">
           <app-interviewed-card
-            [routerLink]="['/interview', interviewed.id]"
+            [routerLink]="['/entrevista', interviewed.path]"
             [interviewed]="interviewed"
             [showShadow]="false"
             (click)="setIntervieweeById(interviewed.id)"
@@ -28,7 +28,7 @@
       <ng-container *ngFor="let interviewed of interviewees">
         <div class="slide">
           <app-interviewed-card
-            [routerLink]="['/interview', interviewed.id]"
+            [routerLink]="['/entrevista', interviewed.path]"
             [interviewed]="interviewed"
             [showShadow]="false"
             (click)="setIntervieweeById(interviewed.id)"
@@ -41,7 +41,7 @@
       >
         <div class="slide">
           <app-interviewed-card
-            [routerLink]="['/interview', interviewed.id]"
+            [routerLink]="['/entrevista', interviewed.path]"
             [interviewed]="interviewed"
             [showShadow]="false"
             (click)="setIntervieweeById(interviewed.id)"

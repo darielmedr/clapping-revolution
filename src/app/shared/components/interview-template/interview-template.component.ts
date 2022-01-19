@@ -1,7 +1,7 @@
-import { InterviewContentType } from './../../models/interview-content-type.model';
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { InterviewButtonsService } from 'src/app/features/interview/services/interview-buttons.service';
+import { InterviewContentType } from 'src/app/shared/models/interview-content-type.model';
 
 @Component({
   selector: 'app-interview-template',

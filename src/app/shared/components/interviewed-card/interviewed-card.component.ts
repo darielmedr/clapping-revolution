@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Interviewee from '../../models/interviewee.model';
+import Interviewee from 'src/app/shared/models/interviewee.model';
 
 @Component({
   selector: 'app-interviewed-card',
@@ -11,6 +11,7 @@ export class InterviewedCardComponent implements OnInit {
   @Input()
   public interviewed: Interviewee | null = {
     id: 0,
+    path: '',
     name: '',
     picture: '',
     quotes: ''

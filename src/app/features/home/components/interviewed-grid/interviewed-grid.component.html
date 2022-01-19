@@ -1,7 +1,7 @@
 <div class="grid-wrapper">
   <div class="cell-container" *ngFor="let interviewed of interviewees$ | async">
     <app-interviewed-card
-      [routerLink]="['/interview', interviewed.id]"
+      [routerLink]="['/entrevista', interviewed.path]"
       [interviewed]="interviewed"
     ></app-interviewed-card>
   </div>

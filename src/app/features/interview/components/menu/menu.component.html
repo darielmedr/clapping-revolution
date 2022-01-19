@@ -20,7 +20,7 @@
   <ul class="links">
     <li
       *ngFor="let interviewed of interviewees"
-      [routerLink]="['/interview', interviewed.id]"
+      [routerLink]="['/entrevista', interviewed.path]"
       routerLinkActive="active-interviewed"
       (click)="closeMenu()"
     >

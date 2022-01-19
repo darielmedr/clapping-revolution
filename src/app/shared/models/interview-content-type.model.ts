@@ -1,5 +1,5 @@
 export enum InterviewContentType {
-    TEXT,
-    VIDEO,
-    AUDIO
+  TEXT,
+  VIDEO,
+  AUDIO,
 }
