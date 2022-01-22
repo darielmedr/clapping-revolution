@@ -33,13 +33,13 @@ export class SeoService {
     this.setTitle(interviewee.name);
   }
 
-  private updateMetaTags(metaTags: MetaDefinition[]): void {
+  public updateMetaTags(metaTags: MetaDefinition[]): void {
     metaTags.forEach((metaTag: MetaDefinition) => {
       this.meta.updateTag(metaTag);
     });
   }
 
-  private setTitle(title: string): void {
+  public setTitle(title: string): void {
     this.title.setTitle(title);
   }
 }
