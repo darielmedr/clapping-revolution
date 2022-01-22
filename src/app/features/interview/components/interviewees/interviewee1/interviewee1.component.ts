@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-interviewee1',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Interviewee1Component implements OnInit {
 
-  constructor() { }
+  constructor(private seoService: SeoService) { }
 
   ngOnInit(): void {
+    this.seoService.updateMetaDataWithInterviewee(1);
   }
-
 }

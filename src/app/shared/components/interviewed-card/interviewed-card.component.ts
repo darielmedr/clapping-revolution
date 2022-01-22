@@ -14,7 +14,8 @@ export class InterviewedCardComponent implements OnInit {
     path: '',
     name: '',
     picture: '',
-    quotes: ''
+    quotes: '',
+    description: ''
   };
 
   @Input()

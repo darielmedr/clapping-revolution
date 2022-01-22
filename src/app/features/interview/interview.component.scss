@@ -28,6 +28,7 @@
         transition: transform 0.5s ease-in-out;
         width: var(--sidenav-banner-height);
         height: var(--sidenav-banner-height);
+        cursor: pointer;
       }
 
       .mat-expansion-panel {

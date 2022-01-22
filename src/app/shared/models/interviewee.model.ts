@@ -4,4 +4,5 @@ export default interface Interviewee {
   name: string;
   picture: string;
   quotes: string;
+  description: string;
 }

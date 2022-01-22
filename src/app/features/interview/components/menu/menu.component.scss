@@ -23,6 +23,7 @@ $rowTitleHeight: 6rem;
 
   .close-btn {
     margin-top: var(--border-margin);
+    height: var(--icon-size-menu);
     padding-right: var(--border-margin);
     justify-content: flex-end;
 
@@ -30,6 +31,7 @@ $rowTitleHeight: 6rem;
       width: var(--icon-size-menu);
       height: var(--icon-size-menu);
       transition: transform 0.5s ease-in-out;
+      line-height: 0;
 
       .icon {
         width: 100%;
