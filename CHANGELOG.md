@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.2.1...v1.3.0) (2022-01-24)
+
+
+### Features
+
+* add interview last content ([dc0ca51](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/dc0ca51983f88f7089802910231851a99f39e17c))
+* add seo metatags and add elements accessibility ([dea203f](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/dea203f958a6c9dc8f254d043fad36ab44d4bbe9))
+* **home.component.ts:** add seo metatags for home page ([3344d06](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/3344d061e1f60a761a08030a70109bf384174557))
+* **interviewees:** add text ([b76f27c](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/b76f27c6ade11d8838a346a8b573a2434c771197))
+
+
+### Bug Fixes
+
+* **home.component.html:** fix landing page description ([30ff622](https://github.com/darielmedr/revolucion-de-los-aplausos/commit/30ff622c5d33d74f4d08999c4a487315f5dae3c4))
+
 ### [1.2.1](https://github.com/darielmedr/revolucion-de-los-aplausos/compare/v1.2.0...v1.2.1) (2021-12-06)
 
 
