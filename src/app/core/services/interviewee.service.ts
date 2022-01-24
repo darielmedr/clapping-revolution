@@ -94,7 +94,7 @@ export class IntervieweeService {
       name: 'JULIO ANTONIO FERNÁNDEZ ESTRADA',
       picture: 'assets/images/interviewees/retrato_11_julio.webp',
       quotes: '«El diálogo se rompe solo si una de las partes se levanta»',
-      description: ''
+      description: 'Entrevista con Julio Antonio Fernández Estrada, Doctor en Ciencias Jurídicas.'
     },
     {
       id: 12,
